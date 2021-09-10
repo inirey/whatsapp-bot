@@ -2,7 +2,7 @@
   "name": "ERZA-WHATSAPP",
   "version": "1.0.0",
   "description": "no bacod",
-  "main": "rey.js",
+  "main": "main.js",
   "directories": {
     "lib": "lib"
   },
