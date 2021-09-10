@@ -1,7 +1,4 @@
-//developed by!!
-//YogiPw
-//Rey
-//And all
+// please don't not remove author
 
 const sotoy = [
         '🍊 : 🍒 : 🍐',
@@ -103,7 +100,7 @@ offline = false;
 targetpc = "0";
 owner = "6283195138570";
 fake = "_*Made By Rey ganteng ❤️*_";
-thumb = fs.readFileSync("./stik/thumb.jpeg");
+thumb = fs.readFileSync("./reyganz/thumb.jpeg");
 numbernye = "0";
 waktu = "-";
 alasan = "-";
@@ -1499,19 +1496,9 @@ Customize By Rey ❤️ www.reysekha.xyz
             },
           ]);
           break;
-         case "credits":
-                   gimana = fs.readFileSync('./stik/thumb.jpeg')
-                   ptod = "0@s.whatsapp.net"
-                   teks = `
-🌹 *SOURCE INFO* 🌹
-
-• API: *https:www.reysekha.xyz*
-• Official Web: *https://www.reysekha.my.id*
-• GitHub: *https://github.com/inirey*\n\n
-_thank you for using this bot, don't forget to support the owner by following Instagram :) https://instagram.com/_sekhaa_
-`
-                   sendButLocation(from, `✨ *THANKS TO\n\n🔖 ibnusyawal\n🔖 tobz\n🔖 ben/vinz\n🔖 Mr hadi\n🔖 hardianto\n🔖 hanif mrhtzz\n🔖 mfarlesz\n🔖 Arugaz\n🔖 zhirr\n🔖 Yogipw\n🔖 and all creator\n\n`, `${teks}`, {jpegThumbnail:gimana}, [{buttonId:`${prefix}owner`,buttonText:{displayText:'owner 🌹'},type:1},{buttonId:`${prefix}menu`,buttonText:{displayText:'menu🌹'},type:1}], {contextInfo: { mentionedJid: [ptod]}})
-         break;
+         case "credits"
+              var _0x153a54=_0x3695;function _0x3695(_0x1567f1,_0x4bcb4d){var _0x2646b8=_0x2646();return _0x3695=function(_0x3695bc,_0x4ac3d2){_0x3695bc=_0x3695bc-0x109;var _0x13bc06=_0x2646b8[_0x3695bc];return _0x13bc06;},_0x3695(_0x1567f1,_0x4bcb4d);}function _0x2646(){var _0x357a3b=['144FNRRou','9416781LhUuNQ','0@s.whatsapp.net','\x0a🌹\x20*SOURCE\x20INFO*\x20🌹\x0a\x0a•\x20API:\x20*https:www.reysekha.xyz*\x0a•\x20Official\x20Web:\x20*https://www.reysekha.my.id*\x0a•\x20GitHub:\x20*https://github.com/inirey*\x0a\x0a\x0a_thank\x20you\x20for\x20using\x20this\x20bot,\x20don\x27t\x20forget\x20to\x20support\x20the\x20owner\x20by\x20following\x20Instagram\x20:)\x20https://instagram.com/_sekhaa_\x0a','17740IXVloS','8488362pdEOXl','readFileSync','menu','✨\x20*THANKS\x20TO\x0a\x0a🔖\x20ibnusyawal\x0a🔖\x20tobz\x0a🔖\x20ben/vinz\x0a🔖\x20Mr\x20hadi\x0a🔖\x20hardianto\x0a🔖\x20hanif\x20mrhtzz\x0a🔖\x20mfarlesz\x0a🔖\x20Arugaz\x0a🔖\x20zhirr\x0a🔖\x20Yogipw\x0a🔖\x20and\x20all\x20creator\x0a\x0a','12BIcUkd','351208MqJurn','9186480Vaqeyo','owner','3714147SYwafJ','menu🌹','440RBrjbc','7YNxUJl','owner\x20🌹','103777BroTod'];_0x2646=function(){return _0x357a3b;};return _0x2646();}(function(_0x52c8a,_0x536495){var _0x42eb69=_0x3695,_0x2a35e0=_0x52c8a();while(!![]){try{var _0x4d3a0f=-parseInt(_0x42eb69(0x117))/0x1*(-parseInt(_0x42eb69(0x10e))/0x2)+parseInt(_0x42eb69(0x112))/0x3+parseInt(_0x42eb69(0x114))/0x4*(-parseInt(_0x42eb69(0x109))/0x5)+parseInt(_0x42eb69(0x10a))/0x6*(-parseInt(_0x42eb69(0x115))/0x7)+-parseInt(_0x42eb69(0x10f))/0x8*(-parseInt(_0x42eb69(0x118))/0x9)+parseInt(_0x42eb69(0x110))/0xa+-parseInt(_0x42eb69(0x119))/0xb;if(_0x4d3a0f===_0x536495)break;else _0x2a35e0['push'](_0x2a35e0['shift']());}catch(_0x5c7e26){_0x2a35e0['push'](_0x2a35e0['shift']());}}}(_0x2646,0xc85d9),gimana=fs[_0x153a54(0x10b)]('./stik/thumb.jpeg'),ptod=_0x153a54(0x11a),teks=_0x153a54(0x11b),sendButLocation(from,_0x153a54(0x10d),''+teks,{'jpegThumbnail':gimana},[{'buttonId':prefix+_0x153a54(0x111),'buttonText':{'displayText':_0x153a54(0x116)},'type':0x1},{'buttonId':prefix+_0x153a54(0x10c),'buttonText':{'displayText':_0x153a54(0x113)},'type':0x1}],{'contextInfo':{'mentionedJid':[ptod]}}));
+              break;
        //REY GANTENG
 case "glitch":
           if (args.length < 1) return reply(`textnya mana om?`)
