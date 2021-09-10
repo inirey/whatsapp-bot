@@ -12,3 +12,24 @@
 <a href="https://github.com/inirey/whatsapp-bot"><img title="Followers" src="https://img.shields.io/github/followers/inirey?color=blue&style=flat-square"></a>
 <a href="https://github.com/inirey/whatsapp-bot/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/inirey/whatsapp-bot?color=red&style=flat-square"></a>
 </p>
+
+## Install
+Clone this project
+
+```bash
+> https://github.com/inirey/whatsapp-bot.git
+> cd whatsapp-bot
+```
+
+Install the dependencies:
+
+```bash
+> bash install.sh
+```
+
+### Usage
+Run the Whatsapp bot
+
+```bash
+> npm start
+```
