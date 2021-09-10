@@ -1,4 +1,3 @@
-p align="center">
 <!-- <img src="https://raw.githubusercontent.com/MRHRTZ/DGC-ChatBotV3/main/media/img/dgc.jpg" width="128" height="128"/> -->
 </p>
 <p align="center">
