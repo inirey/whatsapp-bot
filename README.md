@@ -37,7 +37,7 @@ Run the Whatsapp bot
 
 ---------
 
- [![Nurutomo](https://github.com/inirey.png?size=100)](https://github.com/inirey) | [![Dhika](https://github.com/ahmaddhika.png?size=100)](https://github.com/ahmaddhika)
+ [![Rey](https://github.com/inirey.png?size=100)](https://github.com/inirey) | [![Dhika](https://github.com/ahmaddhika.png?size=50)](https://github.com/ahmaddhika)
 ----|----
 [Nurutomo](https://github.com/inirey) | [Dhika](https://github.com/ahmaddhika)
  Contributor 1 | contributor 2
