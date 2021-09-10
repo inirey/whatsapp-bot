@@ -1,8 +1,8 @@
 {
-  "name": "WHATSAPP-BOT-SELF",
+  "name": "ERZA-WHATSAPP",
   "version": "1.0.0",
-  "description": "Apaan",
-  "main": "main.js",
+  "description": "no bacod",
+  "main": "rey.js",
   "directories": {
     "lib": "lib"
   },
@@ -60,7 +60,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/inirey/whatsapp-bot-self.git"
+    "url": "git+https://github.com/inirey/whatsapp-bot.git"
   },
   "keywords": [
     "Botwea"
