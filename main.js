@@ -28,11 +28,11 @@ const starts = async (client = new WAConnection()) => {
       color("[", "white"),
       color("!", "blue"),
       color("]", "white"),
-      color(" Scan bang")
+      color(" Scan")
     );
   });
 
-  fs.existsSync("./session.json") && client.loadAuthInfo("./session.json");
+  fs.existsSync("./rey.json") && client.loadAuthInfo("./rey.json");
   client.on("connecting", () => {
     start("2", "Connecting...");
   });
@@ -41,7 +41,7 @@ const starts = async (client = new WAConnection()) => {
   });
   await client.connect({ timeoutMs: 30 * 1000 });
   fs.writeFileSync(
-    "./session.json",
+    "./rey.json",
     JSON.stringify(client.base64EncodedAuthInfo(), null, "\t")
   );
 
