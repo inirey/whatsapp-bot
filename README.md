@@ -33,11 +33,3 @@ Run the Whatsapp bot
 ```bash
 > npm start
 ```
-
-
----------
-
- [![Rey](https://github.com/inirey.png?size=100)](https://github.com/inirey) | [![Dhika](https://github.com/ahmaddhika.png?size=10)](https://github.com/ahmaddhika)
-----|----
-[Rey](https://github.com/inirey) | [Dhika](https://github.com/ahmaddhika)
- Contributor 1 | contributor 2
