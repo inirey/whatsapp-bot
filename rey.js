@@ -360,6 +360,7 @@ module.exports = client = async (client, mek) => {
       },
     };
 
+    // THANKS YOGI PW
     const isUrl = (url) => {
       return url.match(
         new RegExp(
@@ -603,7 +604,7 @@ module.exports = client = async (client, mek) => {
               jpegThumbnail: fs.readFileSync(`./stik/thumb.jpeg`), //Gambarnye
             },
             title: "Yogi-Fakereply", //Kasih namalu
-            description: "SELF BOT",
+            description: "ERZA BOT",
             currencyCode: "USD",
             priceAmount1000: "2000",
             retailerId: "YogiPw",
@@ -1259,7 +1260,7 @@ break
            pporang = fs.readFileSync('./stik/thumb.jpeg')
 //           pporang = await client.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
 //           const ofrply = await getBuffer(pporang)
-           ptod = "0@s.whatsapp.net"
+           jembot = "0@s.whatsapp.net"
            cmd = `
 🤖 *INFO BOT*
 
@@ -1478,7 +1479,7 @@ break
 
 Customize By Rey ❤️ www.reysekha.xyz
 `
-          sendButLocation(from, `hallo ${pushname} welcome 👋`, `${cmd}`, {jpegThumbnail:pporang}, [{buttonId:`${prefix}ping`,buttonText:{displayText:'ping 🕐'},type:1},{buttonId:`${prefix}donasi`,buttonText:{displayText:'donasi 🎁'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'owner 🌹'},type:1}], {contextInfo: { mentionedJid: [ptod]}})
+          sendButLocation(from, `hallo ${pushname} welcome 👋`, `${cmd}`, {jpegThumbnail:pporang}, [{buttonId:`${prefix}ping`,buttonText:{displayText:'ping 🕐'},type:1},{buttonId:`${prefix}donasi`,buttonText:{displayText:'donasi 🎁'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'owner 🌹'},type:1}], {contextInfo: { mentionedJid: [jembot]}})
          break;
       case 'wallmountain':
 	   anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Mountain.json`, {method: 'get'})
