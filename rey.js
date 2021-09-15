@@ -1,25 +1,30 @@
-// please don't not remove author
+//developed by!!
+//YogiPw
+//Rey
+//And all
 
 const sotoy = [
-        '🍊 : 🍒 : 🍐',
-        '🍒 : 🔔 : 🍊',
-        '🍇 : 🍇 : 🍐',
-        '🍊 : 🍋 : 🔔', 
-        '🔔 : 🍒 : 🍐',
-        '🔔 : 🍒 : 🍊',
-        '🍊 : 🍋 : 🔔',        
-        '🍐 : 🍒 : 🍋',
-        '🍐 : 🍒 : 🍐',
-        '🍊 : 🍒 : 🍒',
-        '🔔 : 🔔 : 🍇',
-        '🍌 : 🍌 : 🔔',
-        '🍐 : 🔔 : 🔔',
-        '🍊 : 🍋 : 🍒',
-        '🍋 : 🍋 : 🍋 Win👑',
-        '🔔 : 🔔 : 🍇',
-        '🔔 : 🍇 : 🍇', 
-        '🔔 : 🍐 : 🔔',
-        '🍌 : 🍌 : 🍌 Win👑'
+        '🍊 : 🍒 : 🍐 upss coba lagi',
+        '🍒 : 🔔 : 🍊 upss coba lagi',
+        '🍇 : 🍇 : 🍐 upss coba lagi',
+        '🍊 : 🍋 : 🔔 upss coba lagi', 
+        '🍓 : 🍓 : 🍓 selamat anda menang',
+        ' 🌽: 🌽 : 🌽 selamat anda menang',
+        '🔔 : 🍒 : 🍐 upss coba lagi',
+        '🔔 : 🍒 : 🍊 upss coba lagi',
+        '🍊 : 🍋 : 🔔 upss coba lagi',        
+        '🍐 : 🍒 : 🍋 upss coba lagi',
+        '🍐 : 🍐 : 🍐 selamat anda menang',
+        '🍊 : 🍒 : 🍒 upss coba lagi',
+        '🔔 : 🔔 : 🍇 upss coba lagi',
+        '🍌 : 🍌 : 🔔 upss coba lagi',
+        '🍐 : 🔔 : 🔔 upss coba lagi',
+        '🍊 : 🍋 : 🍒 upss coba lagi',
+        '🍋 : 🍋 : 🍋 selamat anda menang',
+        '🔔 : 🔔 : 🍇 upss coba lagi',
+        '🔔 : 🍇 : 🍇 upss coba lagi', 
+        '🔔 : 🍐 : 🔔 upss coba lagi',
+        '🍌 : 🍌 : 🍌 selama anda menang'
         ]
         
 const {
@@ -91,6 +96,8 @@ const { cmdadd } = require("./lib/totalcmd.js");
 const tictactoe = JSON.parse(fs.readFileSync("./database/tictactoe.json"))
 const voting = JSON.parse(fs.readFileSync("./lib/voting.json"));
 const { addVote, delVote } = require("./lib/vote");
+const setting = JSON.parse(fs.readFileSync('./lib/setting.json'));
+const _limit = JSON.parse(fs.readFileSync('./lib/limit.json'));
 const reminder = require("./lib/reminder");
 const { jadibot, stopjadibot, listjadibot } = require("./lib/jadibot");
 const _reminder = JSON.parse(fs.readFileSync("./database/reminder.json"));
@@ -100,9 +107,10 @@ offline = false;
 targetpc = "0";
 owner = "6283195138570";
 fake = "_*Made By Rey ganteng ❤️*_";
-thumb = fs.readFileSync("./reyganz/thumb.jpeg");
+thumb = fs.readFileSync("./stik/thumb.jpeg");
 numbernye = "0";
 waktu = "-";
+limitt = setting.limitt
 alasan = "-";
 autojoin = false;
 prefixStatus = true;
@@ -111,7 +119,78 @@ hit_today = [];
 //=================================================//
 let _scommand = JSON.parse(fs.readFileSync("./database/scommand.json"));
 
+const checkLimit = (sender) => {
+			let found = false
+			for (let lmt of _limit) {
+			if (lmt.id === sender) {
+			let limitCounts = limitt - lmt.limit
+			if (limitCounts <= 0) return sendButMessage(from, `limit anda habis`, `Made By Rey❤️`, [
+            {
+              buttonId: `${prefix}menu`,
+              buttonText: {
+                displayText: `back menu`,
+              },
+              type: 1,                                                                                                                                                            
+            },
+          ]);
+			sendButMessage(from, `limit anda tersisa ${limitCounts}`, `Made By Rey❤️`, [
+            {
+              buttonId: `${prefix}menu`,
+              buttonText: {
+                displayText: `back menu`,
+              },
+              type: 1,                                                                                                                                                            
+            },
+          ]);
+			found = true 
+			}
+		}
+			if (found === false) {
+			let obj = { id: sender, limit: 0 }
+			_limit.push(obj)
+			fs.writeFileSync('./lib/limit.json', JSON.stringify(_limit))
+			client.sendMessage(from, `limit anda : ${limitCounts}`, text, { quoted : mek})
+			}
+		} 
+//funtion limited
+const isLimit = (sender) =>{ 
+			if (isOwner) {return false;}
+			let position = false
+			for (let i of _limit) {
+			if (i.id === sender) {
+			let limits = i.limit
+			if (limits >= limitt ) {
+			position = true
+			reply('*Limit Anda Sudah Habis*')
+			return true 
+			} else {
+			_limit
+			position = true
+			return false 
+			}
+		}
+	}
+			if (position === false) {
+const obj = { id: sender, limit: 0 }
+			_limit.push(obj)
+			fs.writeFileSync('./lib/limit.json',JSON.stringify(_limit))
+			return false 
+			}
+		}
 // Sticker Cmd
+const limitAdd = (sender) => {
+		let position = false
+		Object.keys(_limit).forEach((i) => {
+		if (_limit[i].id == sender) {
+		position = i 
+		}
+	}
+)
+         if (position !== false) {
+		_limit[position].limit += 1
+		fs.writeFileSync('./lib/limit.json', JSON.stringify(_limit))
+		}
+	} ;
 const addCmd = (id, command) => {
   const obj = { id: id, chats: command };
   _scommand.push(obj);
@@ -360,7 +439,6 @@ module.exports = client = async (client, mek) => {
       },
     };
 
-    // THANKS YOGI PW
     const isUrl = (url) => {
       return url.match(
         new RegExp(
@@ -604,7 +682,7 @@ module.exports = client = async (client, mek) => {
               jpegThumbnail: fs.readFileSync(`./stik/thumb.jpeg`), //Gambarnye
             },
             title: "Yogi-Fakereply", //Kasih namalu
-            description: "ERZA BOT",
+            description: "SELF BOT",
             currencyCode: "USD",
             priceAmount1000: "2000",
             retailerId: "YogiPw",
@@ -1120,6 +1198,10 @@ break;
           ]);
           break;
 	 break
+case 'limit':
+		//if (!isUser) return reply(mess.only.userB)
+		checkLimit(sender)
+		break
      case 'wallcyberspace':
 	  anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/CyberSpace.json`, {method: 'get'})
           reply('Tunggu Ya Kak')
@@ -1230,7 +1312,7 @@ break
       case 'slot':
             case 'slots':
             const somtoy = sotoy[Math.floor(Math.random() * sotoy.length)]
-            sendButMessage(from, `${somtoy}\n\n_jika anda mendapatkan 3buah sama anda win_`, `slots lagi?`, [
+            sendButMessage(from, `hasil${somtoy}`, `slots lagi?`, [
             {
               buttonId: `${prefix}slot`,
               buttonText: {
@@ -1260,14 +1342,14 @@ break
            pporang = fs.readFileSync('./stik/thumb.jpeg')
 //           pporang = await client.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
 //           const ofrply = await getBuffer(pporang)
-           jembot = "0@s.whatsapp.net"
+           ptod = "0@s.whatsapp.net"
            cmd = `
-🤖 *INFO BOT*
+🌹 *INFO BOT*
 
-📝 Runtime : ${runtime(process.uptime())}
-📝 Hit Today : ${hit_today.length} Hit
-📝 Total Hit : ${totalhit} Hit
-📝 Total Chat : ${totalchat.length} Chat
+🌹 Runtime : ${runtime(process.uptime())}
+🌹 Hit Today : ${hit_today.length} Hit
+🌹 Total Hit : ${totalhit} Hit
+🌹 Total Chat : ${totalchat.length} Chat
 
 ⏲️ *INFORMATION FEATURE*
 
@@ -1275,211 +1357,251 @@ break
 ❌ = ERORR
 
 
-📸 *Instagram owner*
+🌹 *Instagram owner*
 *https://instagram.com/_sekhaa*
 
-😺 *Github Owner*
+🌹 *Github Owner*
 *https://github.com/inirey*
 
-✏️ *Whatsapp Bot Node JS*
+🌹 *Whatsapp Bot Node JS*
 *https://chat.whatsapp.com/BsC3U7tjBuq6vBXOa4Wh9j*
 
 
-🐋 *MAKER MENU*
+🌹 _*MAKER MENU*_ 
 
-🐋 ${prefix}sticker
-🐋 ${prefix}swm <author|packname>
-🐋 ${prefix}take <author|packname>
-🐋 ${prefix}fdeface 🛑
-🐋 ${prefix}emoji
-🐋 ${prefix}wasted
-🐋 ${prefix}wanted
-🐋 ${prefix}deltrash
-🐋 ${prefix}squidrip
-🐋 ${prefix}sertiff1 <text> 🛑
-🐋 ${prefix}bpink <text>
-🐋 ${prefix}tulis
-
-
-🐋 *CONVERT MENU*
-
-🐋 ${prefix}toimg
-🐋 ${prefix}tomp3
-🐋 ${prefix}tomp4
-🐋 ${prefix}slow
-🐋 ${prefix}fast
-🐋 ${prefix}reverse
-🐋 ${prefix}tourl
-
-🐋 *MEDIA MENU*
-
-🐋 ${prefix}ytsearch <query>
-🐋 ${prefix}igstalk <query>
-🐋 ${prefix}githubstalk <query>
-🐋 ${prefix}tiktokstalk <query>
-🐋 ${prefix}play <query>
-🐋 ${prefix}video <query>
-🐋 ${prefix}igstory <username>
-🐋 ${prefix}twitter <link>
-🐋 ${prefix}tiktok <link>
-🐋 ${prefix}tiktokaudio <link>
-🐋 ${prefix}fb <link>
-🐋 ${prefix}ytmp3 <url>
-🐋 ${prefix}ytmp4 <url>
-🐋 ${prefix}youtube <url>
-🐋 ${prefix}tiktoknowm <url>
-🐋 ${prefix}tiktokdl <url>
-🐋 ${prefix}tiktok <url>
-🐋 ${prefix}instagram <url>
-🐋 ${prefix}ig <url>
-🐋 ${prefix}twitter <url>
-
-🐋 *GAME MENU*
-
-🐋 ${prefix}suit
-🐋 ${prefix}slot
-🐋 ${prefix}slots
+🌹 ${prefix}sticker
+🌹 ${prefix}swm <author|packname>
+🌹 ${prefix}take <author|packname>
+🌹 ${prefix}fdeface 🛑
+🌹 ${prefix}emoji
+🌹 ${prefix}wasted
+🌹 ${prefix}wanted
+🌹 ${prefix}deltrash
+🌹 ${prefix}squidrip
+🌹 ${prefix}sertiff1 <text>🛑
+🌹 ${prefix}bpink <text>
+🌹 ${prefix}tulis
+🌹 ${prefix}toimg
+🌹 ${prefix}tomp3
+🌹 ${prefix}tomp4
+🌹 ${prefix}slow
+🌹 ${prefix}fast
+🌹 ${prefix}reverse
+🌹 ${prefix}tourl
 
 
-🐋 *FUN MENU*
+🌹 _*MEDIA MENU*_ 🌹
 
-🐋 ${prefix}upswteks
-🐋 ${prefix}upswimage
-🐋 ${prefix}upswvideo
-🐋 ${prefix}fitnah
-🐋 ${prefix}fitnahpc
-🐋 ${prefix}kontak
-
-🐋 *OTHER MENU*
-
-🐋 ${prefix}truth
-🐋 ${prefix}dare
-🐋 ${prefix}hidetag
-🐋 ${prefix}kontag
-🐋 ${prefix}sticktag
-🐋 ${prefix}totag
-🐋 ${prefix}ping
-🐋 ${prefix}inspect
-🐋 ${prefix}join
-🐋 ${prefix}caripesan <query>
-🐋 ${prefix}get
-🐋 ${prefix}brainly <query>
-🐋 ${prefix}image <query>
-🐋 ${prefix}anime <random>
-🐋 ${prefix}pinterest <query>
-🐋 ${prefix}komiku <query>
-🐋 ${prefix}lirik <query>
-🐋 ${prefix}chara <query>
-🐋 ${prefix}playstore <query>
-🐋 ${prefix}otaku <query>
+🌹 ${prefix}ytsearch <query>
+🌹 ${prefix}igstalk <query>
+🌹 ${prefix}githubstalk <query>
+🌹 ${prefix}tiktokstalk <query>
+🌹 ${prefix}play <query>
+🌹 ${prefix}video <query>
+🌹 ${prefix}igstory <username>
+🌹 ${prefix}twitter <link>
+🌹 ${prefix}tiktok <link>
+🌹 ${prefix}tiktokaudio <link>
+🌹 ${prefix}fb <link>
+🌹 ${prefix}ytmp3 <url>
+🌹 ${prefix}ytmp4 <url>
+🌹 ${prefix}youtube <url>
+🌹 ${prefix}tiktoknowm <url>
+🌹 ${prefix}tiktokdl <url>
+🌹 ${prefix}tiktok <url>
+🌹 ${prefix}instagram <url>
+🌹 ${prefix}ig <url>
+🌹 ${prefix}twitter <url>
 
 
-🐋 *NSFW & 18 & anime*
+🌹 _*ISLAMI MENU*_ 🌹
+
+🌹 ${prefix}kisahnabi < nama nabi >
 
 
-🐋 ${prefix}anal
-🐋 ${prefix}pussy
-🐋 ${prefix}lesbian
-🐋 ${prefix}eroneko
-🐋 ${prefix}bj
-🐋 ${prefix}neko
-🐋 ${prefix}baka
-🐋 ${prefix}poke
-🐋 ${prefix}slap
-🐋 ${prefix}neko2
-🐋 ${prefix}keta
-🐋 ${prefix}blowjob
-🐋 ${prefix}awoo
-🐋 ${prefix}blowjob
-🐋 ${prefix}megumin
-🐋 ${prefix}neko3
-🐋 ${prefix}trapnime
-🐋 ${prefix}kitsune
-🐋 ${prefix}yuri
-🐋 ${prefix}loli
-🐋 ${prefix}naruto
-🐋 ${prefix}boruto
-🐋 ${prefix}minato
+🌹 _*GAME MENU*_ 🌹
 
-🐋 *TEXT PRO*
-
-🐋 ${prefix}glitch <text1|text2>
-🐋 ${prefix}battlefield <text1|text2>
-🐋 ${prefix}pubglogo <text1|text2>
-🐋 ${prefix}googlesugest <text1|text2|text3>
-🐋 ${prefix}coffecup <text1>
-🐋 ${prefix}coffecup2 <text1>
-🐋 ${prefix}neontext <text1>
-🐋 ${prefix}glowtext <text1>
-🐋 ${prefix}summer <text1>
-🐋 ${prefix}flowertext <text1>
+🌹 ${prefix}suit
+🌹 ${prefix}slot
+🌹 ${prefix}slots
 
 
-🐋 *KERANG MENU*
+🌹  _*FUN MENU*_ 🌹
 
-🐋 ${prefix}apakah <saya Ganteng?>
-🐋 ${prefix}kapankah <kapankah saya sukses>
-🐋 ${prefix}bisakah <bisakah saya sukses?>
+🌹 ${prefix}upswteks
+🌹 ${prefix}upswimage
+🌹 ${prefix}upswvideo
+🌹 ${prefix}fitnah
+🌹 ${prefix}fitnahpc
+🌹 ${prefix}kontak
 
 
+🌹  _*OTHER MENU*_ 🌹
 
-🐋 *RANDOM IMAGE & VID*
+🌹 ${prefix}truth
+🌹 ${prefix}dare
+🌹 ${prefix}hidetag
+🌹 ${prefix}kontag
+🌹 ${prefix}sticktag
+🌹 ${prefix}totag
+🌹 ${prefix}ping
+🌹 ${prefix}inspect
+🌹 ${prefix}join
+🌹 ${prefix}caripesan <query>
+🌹 ${prefix}get
+🌹 ${prefix}brainly <query>
+🌹 ${prefix}image <query>
+🌹 ${prefix}anime <random>
+🌹 ${prefix}pinterest <query>
+🌹 ${prefix}komiku <query>
+🌹 ${prefix}lirik <query>
+🌹 ${prefix}chara <query>
+🌹 ${prefix}playstore <query>
+🌹 ${prefix}otaku <query>
 
 
-🐋 ${prefix}meme
-🐋 ${prefix}memeindo
-🐋 ${prefix}cecan
-🐋 ${prefix}cogan
-🐋 ${prefix}justina
-🐋 ${prefix}asupan
-🐋 ${prefix}asupan2
-🐋 ${prefix}aeshestic
-🐋 ${prefix}wallprogramming ❌
-🐋 ${prefix}wallmountain ❌
-🐋 ${prefix}wallcyberspace ❌
-🐋 ${prefix}wallgame ❌
-🐋 ${prefix}wallmuslim ❌
-🐋 ${prefix}walltechnology ❌
-🐋 ${prefix}jadibot [locked]
+🌹  _*WIBOE MENU*_ 🌹
 
-🐋 *OWNER MENU*
+🌹 ${prefix}anal
+🌹 ${prefix}pussy
+🌹 ${prefix}lesbian
+🌹 ${prefix}eroneko
+🌹 ${prefix}bj
+🌹 ${prefix}neko
+🌹 ${prefix}baka
+🌹 ${prefix}poke
+🌹 ${prefix}slap
+🌹 ${prefix}neko2
+🌹 ${prefix}keta
+🌹 ${prefix}blowjob
+🌹 ${prefix}waifu 
+🌹 ${prefix}awoo
+🌹 ${prefix}blowjob
+🌹 ${prefix}megumin
+🌹 ${prefix}neko3
+🌹 ${prefix}trapnime
+🌹 ${prefix}kitsune
+🌹 ${prefix}yuri
+🌹 ${prefix}loli
+🌹 ${prefix}naruto
+🌹 ${prefix}boruto
+🌹 ${prefix}minato
 
-🐋 ${prefix}off
-🐋 ${prefix}on
-🐋 ${prefix}status
-🐋 ${prefix}setthumb
-🐋 ${prefix}settarget
-🐋 ${prefix}setfakeimg
-🐋 ${prefix}setreply
-🐋 ${prefix}setprefix
-🐋 ${prefix}mode
-🐋 ${prefix}term <code>
-🐋 ${prefix}eval <code>
-🐋 ${prefix}colongsw [reply sw]
+🌹  _*TEXT MAKER*_ 🌹
 
-🐋 *GRUP MENU*
+🌹 ${prefix}glitch <text1|text2>
+🌹 ${prefix}battlefield <text1|text2>
+🌹 ${prefix}pubglogo <text1|text2>
+🌹 ${prefix}googlesugest <text1|text2|text3>
+🌹 ${prefix}coffecup <text1>
+🌹 ${prefix}coffecup2 <text1>
+🌹 ${prefix}neontext <text1>
+🌹 ${prefix}marveltext <text1>|<text2>
+🌹 ${prefix}marveltext2 <text1>|<text2>
+🌹 ${prefix}burningtext <text>
+🌹 ${prefix}blackpink <text>
+🌹 ${prefix}woodentext <text>
+🌹 ${prefix}wolflogo <text1|text2>
+🌹 ${prefix}captainlogo <text1|text2>
+🌹 ${prefix}glowtext <text1>
+🌹 ${prefix}goldentext <text1>
+🌹 ${prefix}summer <text1>
+🌹 ${prefix}flowertext <text1>
+🌹 ${prefix}lionlogo text1|text2
+🌹 ${prefix}ninjalogo text1|text2
+🌹 ${prefix}jokerlogo text
+🌹 ${prefix}honey text
+🌹 ${prefix}hororr text
+🌹 ${prefix}bread text
+🌹 ${prefix}koipish text
+🌹 ${prefix}stroberi text
+🌹 ${prefix}toxic text
+🌹 ${prefix}magma text
+🌹 ${prefix}deluxe text
+🌹 ${prefix}wicker text
+🌹 ${prefix}fabric text
+🌹 ${prefix}holograpic text
+🌹 ${prefix}pornhub text1|text2
+🌹 ${prefix}vintage text1|text2
+🌹 ${prefix}gluetext text
+🌹 ${prefix}engraved text
+🌹 ${prefix}writing text
+🌹 ${prefix}luxury text
+🌹 ${prefix}larva text
+🌹 ${prefix}skytext text
+🌹 ${prefix}neondevil text
+🌹 ${prefix}multicolor text
+🌹 ${prefix}watercolor text
+🌹 ${prefix}glossy text
+🌹 ${prefix}artpapper text
+🌹 ${prefix}brokenglass text
+🌹 ${prefix}neonlight text
+🌹 ${prefix}hallowen text
 
-🐋 ${prefix}grup
-🐋 ${prefix}promote <reply chat member>
-🐋 ${prefix}demote <reply chat member>
-🐋 ${prefix}setdesc
-🐋 ${prefix}setname
-🐋 ${prefix}kick <reply/tag member>
-🐋 ${prefix}add <reply/tag member>
-🐋 ${prefix}getbio <reply chat member>
-🐋 ${prefix}getname <reply chat member>
-🐋 ${prefix}reminder <msg/2s>
-🐋 ${prefix}listonline
-🐋 ${prefix}sider [reply chat bot]
-🐋 ${prefix}antilink
-🐋 ${prefix}antihidetag
-🐋 ${prefix}antiviewonce
-🐋 ${prefix}antivirtex
-🐋 ${prefix}kickarea
+🌹  _*KERANG MENU*_ 🌹
+
+🌹 ${prefix}apakah <saya Ganteng?>
+🌹 ${prefix}kapankah <kapankah saya sukses>
+🌹 ${prefix}bisakah <bisakah saya sukses?>
+
+🌹  _*RANDOM IMAGE*_ 🌹
+
+🌹 ${prefix}meme
+🌹 ${prefix}memeindo
+🌹 ${prefix}cecan
+🌹 ${prefix}cogan
+🌹 ${prefix}justina
+🌹 ${prefix}asupan
+🌹 ${prefix}asupan2
+🌹 ${prefix}aeshestic
+🌹 ${prefix}wallprogramming ❌
+🌹 ${prefix}wallmountain ❌
+🌹 ${prefix}wallcyberspace ❌
+🌹 ${prefix}wallgame ❌
+🌹 ${prefix}wallmuslim ❌
+🌹 ${prefix}walltechnology ❌
+🌹 ${prefix}jadibot [locked]
+
+
+🌹  _*OWNER MENU*_ 🌹
+
+🌹 ${prefix}off
+🌹 ${prefix}on
+🌹 ${prefix}status
+🌹 ${prefix}setthumb
+🌹 ${prefix}settarget
+🌹 ${prefix}setfakeimg
+🌹 ${prefix}setreply
+🌹 ${prefix}setprefix
+🌹 ${prefix}mode
+🌹 ${prefix}term <code>
+🌹 ${prefix}eval <code>
+🌹 ${prefix}colongsw [reply sw]
+
+
+🌹  _*GRUP MENU*_ 🌹
+
+🌹 ${prefix}grup
+🌹 ${prefix}promote <reply chat member>
+🌹 ${prefix}demote <reply chat member>
+🌹 ${prefix}setdesc
+🌹 ${prefix}setname
+🌹 ${prefix}kick <reply/tag member>
+🌹 ${prefix}add <reply/tag member>
+🌹 ${prefix}getbio <reply chat member>
+🌹 ${prefix}getname <reply chat member>
+🌹 ${prefix}reminder <msg/2s>
+🌹 ${prefix}listonline
+🌹 ${prefix}sider [reply chat bot]
+🌹 ${prefix}antilink
+🌹 ${prefix}antihidetag
+🌹 ${prefix}antiviewonce
+🌹 ${prefix}antivirtex
+🌹 ${prefix}kickarea
 
 Customize By Rey ❤️ www.reysekha.xyz
 `
-          sendButLocation(from, `hallo ${pushname} welcome 👋`, `${cmd}`, {jpegThumbnail:pporang}, [{buttonId:`${prefix}ping`,buttonText:{displayText:'ping 🕐'},type:1},{buttonId:`${prefix}donasi`,buttonText:{displayText:'donasi 🎁'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'owner 🌹'},type:1}], {contextInfo: { mentionedJid: [jembot]}})
+          sendButLocation(from, `hallo ${pushname} welcome 👋`, `${cmd}`, {jpegThumbnail:pporang}, [{buttonId:`${prefix}ping`,buttonText:{displayText:'ping 🕐'},type:1},{buttonId:`${prefix}donasi`,buttonText:{displayText:'donasi 🎁'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'owner 🌹'},type:1}], {contextInfo: { mentionedJid: [ptod]}})
          break;
       case 'wallmountain':
 	   anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Mountain.json`, {method: 'get'})
@@ -1497,10 +1619,539 @@ Customize By Rey ❤️ www.reysekha.xyz
             },
           ]);
           break;
-         case "credits"
-              var _0x153a54=_0x3695;function _0x3695(_0x1567f1,_0x4bcb4d){var _0x2646b8=_0x2646();return _0x3695=function(_0x3695bc,_0x4ac3d2){_0x3695bc=_0x3695bc-0x109;var _0x13bc06=_0x2646b8[_0x3695bc];return _0x13bc06;},_0x3695(_0x1567f1,_0x4bcb4d);}function _0x2646(){var _0x357a3b=['144FNRRou','9416781LhUuNQ','0@s.whatsapp.net','\x0a🌹\x20*SOURCE\x20INFO*\x20🌹\x0a\x0a•\x20API:\x20*https:www.reysekha.xyz*\x0a•\x20Official\x20Web:\x20*https://www.reysekha.my.id*\x0a•\x20GitHub:\x20*https://github.com/inirey*\x0a\x0a\x0a_thank\x20you\x20for\x20using\x20this\x20bot,\x20don\x27t\x20forget\x20to\x20support\x20the\x20owner\x20by\x20following\x20Instagram\x20:)\x20https://instagram.com/_sekhaa_\x0a','17740IXVloS','8488362pdEOXl','readFileSync','menu','✨\x20*THANKS\x20TO\x0a\x0a🔖\x20ibnusyawal\x0a🔖\x20tobz\x0a🔖\x20ben/vinz\x0a🔖\x20Mr\x20hadi\x0a🔖\x20hardianto\x0a🔖\x20hanif\x20mrhtzz\x0a🔖\x20mfarlesz\x0a🔖\x20Arugaz\x0a🔖\x20zhirr\x0a🔖\x20Yogipw\x0a🔖\x20and\x20all\x20creator\x0a\x0a','12BIcUkd','351208MqJurn','9186480Vaqeyo','owner','3714147SYwafJ','menu🌹','440RBrjbc','7YNxUJl','owner\x20🌹','103777BroTod'];_0x2646=function(){return _0x357a3b;};return _0x2646();}(function(_0x52c8a,_0x536495){var _0x42eb69=_0x3695,_0x2a35e0=_0x52c8a();while(!![]){try{var _0x4d3a0f=-parseInt(_0x42eb69(0x117))/0x1*(-parseInt(_0x42eb69(0x10e))/0x2)+parseInt(_0x42eb69(0x112))/0x3+parseInt(_0x42eb69(0x114))/0x4*(-parseInt(_0x42eb69(0x109))/0x5)+parseInt(_0x42eb69(0x10a))/0x6*(-parseInt(_0x42eb69(0x115))/0x7)+-parseInt(_0x42eb69(0x10f))/0x8*(-parseInt(_0x42eb69(0x118))/0x9)+parseInt(_0x42eb69(0x110))/0xa+-parseInt(_0x42eb69(0x119))/0xb;if(_0x4d3a0f===_0x536495)break;else _0x2a35e0['push'](_0x2a35e0['shift']());}catch(_0x5c7e26){_0x2a35e0['push'](_0x2a35e0['shift']());}}}(_0x2646,0xc85d9),gimana=fs[_0x153a54(0x10b)]('./stik/thumb.jpeg'),ptod=_0x153a54(0x11a),teks=_0x153a54(0x11b),sendButLocation(from,_0x153a54(0x10d),''+teks,{'jpegThumbnail':gimana},[{'buttonId':prefix+_0x153a54(0x111),'buttonText':{'displayText':_0x153a54(0x116)},'type':0x1},{'buttonId':prefix+_0x153a54(0x10c),'buttonText':{'displayText':_0x153a54(0x113)},'type':0x1}],{'contextInfo':{'mentionedJid':[ptod]}}));
-              break;
+         case "credits":
+                   gimana = fs.readFileSync('./stik/thumb.jpeg')
+                   ptod = "0@s.whatsapp.net"
+                   teks = `
+🌹 *SOURCE INFO* 🌹
+
+• API: *https:www.reysekha.xyz*
+• Official Web: *https://www.reysekha.my.id*
+• GitHub: *https://github.com/inirey*\n\n
+_thank you for using this bot, don't forget to support the owner by following Instagram :) https://instagram.com/_sekhaa_
+`
+                   sendButLocation(from, `✨ *THANKS TO\n\n🔖 ibnusyawal\n🔖 tobz\n🔖 ben/vinz\n🔖 Mr hadi\n🔖 hardianto\n🔖 hanif mrhtzz\n🔖 mfarlesz\n🔖 Arugaz\n🔖 zhirr\n🔖 Yogipw\n🔖 and all creator\n\n`, `${teks}`, {jpegThumbnail:gimana}, [{buttonId:`${prefix}owner`,buttonText:{displayText:'owner 🌹'},type:1},{buttonId:`${prefix}menu`,buttonText:{displayText:'menu🌹'},type:1}], {contextInfo: { mentionedJid: [ptod]}})
+         break;
        //REY GANTENG
+case "lionlogo":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				lio = body.slice(9)
+				on = lio.split("|")[0];
+                sin = lio.split("|")[1];
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/lion-logo?text=${on}&text2=${sin}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "ninjalogo":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				nin = body.slice(10)
+				ja = nin.split("|")[0];
+                lo = nin.split("|")[1];
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/ninja-logo?text=${ja}&text2=${lo}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "jokerlogo":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				jok = body.slice(10)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/joker-logo?text=${jok}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "honey":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				mad = body.slice(6)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/honey?text=${mad}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "hororr":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				hor = body.slice(6)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/horor-blood?text=${hor}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "bread":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				bre = body.slice(6)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/bread?text=${bre}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "koipish":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				koi = body.slice(8)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/koi?text=${koi}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "stroberi":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				str = body.slice(9)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/stroberi?text=${str}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "toxic":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				tox = body.slice(6)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/toxic-bokeh?text=${tox}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "magma":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				mag = body.slice(6)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/larva?text=${mag}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "deluxe":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				del = body.slice(7)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/deluxe-silver?text=${del}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+  case "wicker":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				wic = body.slice(7)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/wicker?text=${wic}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+ case "fabric":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				fa = body.slice(7)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/fabric?text=${fa}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "holograpic":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				go = body.slice(11)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/holograpic?text=${go}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "pornhub":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				por = body.slice(8)
+				pr = por.split("|")[0];
+                nub = por.split("|")[1];
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/pornhub?text=${pr}&text2=${nub}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "vintage":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				vin = body.slice(8)
+				ta = vin.split("|")[0];
+                ge = vin.split("|")[1];
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/vintage?text=${ta}&text2=${ge}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "gluetext":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				glu = body.slice(9)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/glue-text?text=${glu}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "engraved":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				eng = body.slice(9)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/engraved?text=${eng}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "writing":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				wri = body.slice(8)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/writing?text=${wri}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "luxury":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				lux = body.slice(7)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/luxury?text=${lux}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "larva":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				lar = body.slice(6)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/magma?text=${lar}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+ case "skytext":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				sky = body.slice(8)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/sky-text?text=${sky}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "neondevil":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				dev = body.slice(10)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/neon-devil?text=${dev}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "multicolor":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				mul = body.slice(11)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/multi-color?text=${mul}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "watercolor":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				wat = body.slice(11)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/water-color?text=${wat}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "glossy":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				sy = body.slice(7)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/glossy?text=${sy}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "artpapper":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				art = body.slice(10)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/art-papper?text=${art}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "brokenglass":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				bro = body.slice(12)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/broken-glass?text=${bro}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "neonlight":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				ne = body.slice(10)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/neon-light?text=${ne}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "hallowen":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				hal = body.slice(9)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/hallowen-text?text=${hal}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+          //END TEXTPRO
+case "goldentext":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				gold = body.slice(11)
+				anu = await fetchJson(`https://rey-api.herokuapp.com/api/textmaker/roses?text=${gold}&theme=golden&apikey=sekhaapi`)
+				buffer = await getBuffer(anu.result.url)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "burningtext":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				sha = body.slice(12)
+				anu = await fetchJson(`https://rey-api.herokuapp.com/api/textmaker/random?text=${sha}&theme=text-burn&apikey=sekhaapi`)
+				buffer = await getBuffer(anu.result.url)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "romantic":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				romtic = body.slice(9)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/photooxy/romantic?text=${romtic}&apikey=apirey`)
+				buffer = await getBuffer(anu.result)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+ case "woodentext":
+          if (args.length < 1) return reply(`textnya mana om?`)
+				smo = body.slice(11)
+				anu = await fetchJson(`https://rey-api.herokuapp.com/api/textmaker/roses?text=${smo}&theme=wooden-boarch&apikey=sekhaapi`)
+				buffer = await getBuffer(anu.result.url)
+				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
 case "glitch":
           if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(7)
@@ -1518,50 +2169,60 @@ case "glitch":
             },
           ]);
           break;
-case "play3":
+case "play5":
           playmp3 = body.slice(9)
           return reply(mess.Iv);
            anu = await fetchJson(
-          `https://api.zeks.me/api/ytplaymp3/2?apikey=administrator&q=${playmp3}`, 
+          `https://server-api-rey.herokuapp.com/api/yt/playmp3?query=${playmp3}&apikey=apirey`, 
         );
-        buffer = await getBuffer (anu.result.thumbnail)
+        buffer = await getBuffer (anu.thumb)
         sendButImage(
           from,
-          `• *Title*: ${anu.result.title}\n• *Durasi*: ${anu.result.duration}\n• *Size*: ${anu.result.size}\n• *Source*: ${anu.result.source}`,
+          `• *Title*: ${anu.title}\n• *Published*: ${anu.published}\n• *Channel*: ${anu.channel}\n• *Views*: ${anu.views}`,
           `Silahkan pilih salah satu yg mau didownload`,
           buffer,
           [
             {
-              buttonId: `${prefix}pley ${args[0]}|ytplaymp4/2`,
+              buttonId: `${prefix}pp ${playmp3}|playmp4`,
               buttonText: {
-                displayText: `VIDEO`,
+                displayText: `VIDEO 📸`,
               },
               type: 1,
             },
             {
-              buttonId: `${prefix}pley ${args[0]}|ytplaymp3/2`,
+              buttonId: `${prefix}pp ${playmp3}|playmp3`,
               buttonText: {
-                displayText: `AUDIO`,
+                displayText: `AUDIO 💽`,
               },
               type: 1,
             },
           ]
         );
-        break;        
-case "pley":
+        break; 
+     //https://server-api-rey.herokuapp.com/api/yt/${tipe}?query=${link}&apikey=apirey
+case "pp":
         var gh = args.join("");
-        var link = gh.split("|")[0];
+        var iya = gh.split("|")[0];
         var tipe = gh.split("|")[1];
         var rey = await fetchJson(
-          `https://api.zeks.me/api/${tipe}?apikey=administrator&q=${link}`
+          `https://server-api-rey.herokuapp.com/api/yt/${tipe}?query=${iya}&apikey=apirey`
         );
-        if (tipe == "ytplaymp3/2") {
-          sendMediaURL(from, rey.result.link, "");
+        if (tipe == "playmp3") {
+          sendMediaURL(from, rey.url, "");
         }
-        if (tipe == "ytplaymp4/2") {
-          sendMediaURL(from, rey.result.link, "");
+        if (tipe == "playmp4") {
+          sendMediaURL(from, rey.url, "");
         }
         break;
+ case 'play3':
+				playmp3 = body.slice(9)
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/yt/playmp3?query=${playmp3}&apikey=apirey`, {method: 'get'})
+				infomp3 = `「 *YOUTUBE PLAY MP3* 」\n\n*• Judul:* ${anu.title}\n*• Chanel:* ${anu.channel}\n*• Published:* ${anu.published}\n*• View:* ${anu.views}\n\n _*AUDIO SEDANG DI KIRIM*_`
+				buffer = await getBuffer(anu.thumb)
+				client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+				lagu = await getBuffer(anu.url)
+				client.sendMessage(from, lagu, audio, )
+				break;
 case 'play2':
 				playmp3 = body.slice(9)
 				anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?apikey=administrator&q=${playmp3}`, {method: 'get'})
@@ -1570,6 +2231,90 @@ case 'play2':
 				client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
 				lagu = await getBuffer(anu.result.url_audio)
 				client.sendMessage(from, lagu, audio, )
+				break;
+case "marveltext2":
+               if (args.length < 1) return reply(`textnya mana om?`)
+               maa = body.slice(12)
+               mar = maa.split("|")[0];
+               vel = maa.split("|")[1];
+               anu = await fetchJson (`https://server-api-rey.herokuapp.com/api/textpro/marvel-logo2?text=${mar}&text2=${vel}&apikey=apirey`, )
+               buffer = await getBuffer (anu.result)
+               sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "captainlogo":
+               if (args.length < 1) return reply(`textnya mana om?`)
+               cap = body.slice(9)
+               tain = cap.split("|")[0];
+               ta = cap.split("|")[1];
+               anu = await fetchJson (`https://server-api-rey.herokuapp.com/api/textpro/captain?text1=${tain}&text2=${ta}&apikey=apirey`, )
+               buffer = await getBuffer (anu.result)
+               sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "marveltext":
+               if (args.length < 1) return reply(`textnya mana om?`)
+               ma = body.slice(11)
+               mar = ma.split("|")[0];
+               vel = ma.split("|")[1];
+               anu = await fetchJson (`https://server-api-rey.herokuapp.com/api/textpro/marvel-logo?text=${mar}&text2=${vel}&apikey=apirey`, )
+               buffer = await getBuffer (anu.result)
+               sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "wolflogo":
+               if (args.length < 1) return reply(`textnya mana om?`)
+               peh = body.slice(9)
+               wo = peh.split("|")[0];
+               lf = peh.split("|")[1];
+               anu = await fetchJson (`https://server-api-rey.herokuapp.com/api/textpro/logo-wolf?text=${wo}&text2=${lf}&apikey=apirey`, )
+               buffer = await getBuffer (anu.result)
+               sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case "blackpink":
+               if (args.length < 1) return reply(`textnya mana om?`)
+               black = body.slice(10)
+               anu = await fetchJson (`https://server-api-rey.herokuapp.com/api/textpro/black-pink?text=${black}&apikey=apirey`, )
+               buffer = await getBuffer (anu.result)
+               sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
+            {
+              buttonId: `${prefix}credits`,
+              buttonText: {
+                displayText: `source 🌹`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
 case "pubglogo":
           if (args.length < 1) return reply(`textnya mana om?`)
 				ct = body.slice(9)
@@ -1827,6 +2572,20 @@ sendButImage(from, `nihhh ngab🗿`, `lanjut?`, kot, [
               buttonId: `${prefix}neko2`,
               buttonText: {
                 displayText: `again ➡️`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case 'waifu':
+if (!isGroup) return reply(mess.only.group)
+anu = await fetchJson(`https://api.waifu.pics/sfw/waifu`)
+bep = await getBuffer (anu.url)
+sendButImage(from, `nihhh`, `lanjut?`, bep, [
+            {
+              buttonId: `${prefix}waifu`,
+              buttonText: {
+                displayText: `next ➡️`,
               },
               type: 1,
             },
@@ -2097,12 +2856,30 @@ sendButImage(from, `nihhh ngab🗿`, `lanjut?`, gim, [
          break;
       case "kisahnabi":
          teks = body.slice(11)
-         anu = await fetchJson (`https://rey-api.herokuapp.com/api/kisahnabi?nabi=${teks}&apikey=sekhaapi`, )
-         var hmm = anu.result
-         teks = `• NABI: ${hmm.nabi.nabi}\n• LAHIR: ${hmm.nabi.lahir}\n• UMUR: ${hmm.nabi.umur}\n• LAHIR: ${hmm.nabi.tempat}\n\n${hmm.nabi.kisah}`,
-         beff = await getBuffer (hmm.nabi.image)
-         client.sendMessage(from, beff, image, {quoted: mek, caption: teks})
-         break
+         anu = await fetchJson (`https://server-api-rey.herokuapp.com/api/muslim/kisahnabi?nabi=${teks}&apikey=apirey`, )
+         teks = `• NABI: ${anu.result.name}\n• LAHIR: ${anu.result.kelahiran}\n• wafat pada: ${anu.result.wafat_usia}\n• singgah: ${anu.result.singgah}\n\n Al-kisah\n${anu.result.kisah}`,
+         reply(teks)
+          break
+      case 'hadits':
+if (args.length < 1) return reply(`contoh ${prefix}hadits muslim|19`)
+				ct = body.slice(7)
+				tx1 = ct.split("|")[0];
+                tx = ct.split("|")[1];
+				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/muslim/hadits?kitab=${tx1}&nomor=${tx}&apikey=apirey`)
+				apa = `
+• Urutan: ${anu.data.inQuran}
+• surah ke: ${anu.data.inSurah}
+• juz: ${anu.data.meta.juz}
+• page: ${anu.data.meta.page}
+• manzil: ${anu.data.meta.manzil}
+• ruku: ${anu.data.meta.ruku}
+• hizb: ${anu.data.meta.hizbQuarter}
+• Arab: ${anu.data.arab}\n\n
+• Tafsir: ${anu.data.short}\n${anu.data.long}
+
+`
+reply(apa)
+       break
       case "owner":
         sendKontak(from, owner, "Tod", "save lah ajg");
         break;
@@ -2237,6 +3014,23 @@ sendButImage(from, `nihhh ngab🗿`, `lanjut?`, gim, [
               buttonId: `${prefix}minato`,
               buttonText: {
                 displayText: `next ➡️`,
+              },
+              type: 1,
+            },
+           ]);
+        break;
+case 'quotemaker':
+                    gh = body.slice(12)
+                    teks1 = gh.split("|")[0];
+                    teks2 = gh.split("|")[1];
+                    teks3 = gh.split("|")[2]
+                    data = await fetchJson(`https://terhambar.com/aw/qts/?kata=${teks1}&author=${teks2}&tipe=${teks3}`)
+                    hasil = await getBuffer(data.result)
+                    sendButImage(from, `nih kack`, `customize by Rey ❤️`, hasil, [
+            {
+              buttonId: `${prefix}?`,
+              buttonText: {
+                displayText: `back menu`,
               },
               type: 1,
             },
@@ -2665,6 +3459,12 @@ ${members > 1 ? `${members - reads.length - deliveries.length} tersisa` : ""}
             },
           ]);
           break;
+      case 'delete':
+					case 'd':
+					if (!isGroup)return reply(mess.only.group)
+					if (!isGroupAdmins && !mek.key.fromMe) return reply("Khusus admin");
+					client.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
+					break
       case "add":
         if (!isGroup) return reply(mess.only.group);
         if (!isGroupAdmins && !mek.key.fromMe) return reply("Khusus admin");
@@ -3284,16 +4084,16 @@ Reminder berhasil diaktifkan!
       case "igstalk":
         if (!q) return reply("Usernamenya?");
         const tod = await fetchJson(
-          `https://api.dhnjing.xyz/stalk/instagram?user=${q}`
+          `https://restapifull-by-rey.herokuapp.com/api/ig/stalk?username=${q}&apikey=administrator`
         );
-        buff = await getBuffer(tod.result.user_profile_hd);
-        const tt = `*INSTAGRAM STALKING*
-    • Username: ${tod.result.username}
-    • Fullname: ${tod.result.user_fullname}
-    • Bio: ${tod.result.user_bio}
-    • Jumlah postingan: ${tod.result.user_post_total}
-    • Following: ${tod.result.user_following}
-    • Follower: ${tod.result.user_followers}`;
+        buff = await getBuffer(tod.result.Profile_pic);
+        const tt = `*INSTAGRAM STALKING\n\n*
+    • Username: ${tod.result.Username}
+    • Fullname: ${tod.result.Name}
+    • Bio: ${tod.result.Biodata}
+    • Jumlah postingan: ${tod.result.Jumlah_Post}
+    • Following: ${tod.result.Jumlah_Followers}
+    • Follower: ${tod.result.Jumlah_Following}`;
         client.sendMessage(from, buff, image, { quoted: mek, caption: tt });
         break;
       case "githubstalk":
@@ -3301,13 +4101,13 @@ Reminder berhasil diaktifkan!
         const oi = await fetchJson(
           `https://api.dhnjing.xyz/stalk/github?user=dehan-j1ng`
         );
-        const mm = `*GITHUB STALK*
-    Username: ${oi.result.username}
-    Fullname: ${oi.result.name}
-    Bio: ${oi.result.user_bio}
-    Jumlah repo: ${oi.result.user_repo}
-    Following: ${oi.result.user_following}
-    Follower: ${oi.result.user_followers}`;
+        const mm = `*GITHUB STALK\n\n*
+   •  Username: ${oi.result.username}
+   •  Fullname: ${oi.result.name}
+   •  Bio: ${oi.result.user_bio}
+   •  Jumlah repo: ${oi.result.user_repo}
+   •  Following: ${oi.result.user_following}
+   •  Follower: ${oi.result.user_followers}`;
         reply(mm);
         break;
       case "tiktokstalk":
@@ -3438,20 +4238,6 @@ Reminder berhasil diaktifkan!
           thumbnail: Buffer.alloc(0),
         });
         break;
-      case "bpink":
-        pll = body.slice(7);
-
-        if (args.length < 1) return reply(preffk);
-        reply("Loading.....");
-        rakz = await getBuffer(
-          `https://fdz-app.herokuapp.com/api/maker/blackpink?text=${pll}`
-        );
-        client.sendMessage(from, rakz, image, {
-          quoted: mek,
-          thumbnail: Buffer.alloc(0),
-        });
-        break;
-
       case "wanted":
         if (
           ((isMedia && !mek.message.videoMessage) || isQuotedImage) &&
@@ -3659,8 +4445,23 @@ ${anime.desc}\n\n*Link Batch* : ${anime.batch}\n*Link Download SD* : ${anime.bat
         let pin = await hx.pinterest(q);
         let ac = pin[Math.floor(Math.random() * pin.length)];
         let di = await getBuffer(ac);
-        await client.sendMessage(from, di, image, { quoted: mek });
-        break;
+        sendButImage(from, `hasil pencarian ${q}`, `ingin cari hasil lain?`, di, [
+           {
+              buttonId: `${prefix}pinterest ${q}`,
+            buttonText: {
+              displayText: `search again `,
+            },
+            type: 1,
+          },
+          {
+              buttonId: `${prefix}?`,
+              buttonText: {
+                displayText: `back menu`,
+              },
+              type: 1,
+           },
+         ]);
+         break;
       case "playstore":
         if (!q) return reply("lu nyari apa?");
         let play = await hx.playstore(q);
@@ -4448,7 +5249,7 @@ ${anime.desc}\n\n*Link Batch* : ${anime.batch}\n*Link Download SD* : ${anime.bat
           ytresult +=
             "❏ Upload: " + video.ago + "\n________________________\n\n";
         });
-        ytresult += "◩ *SELF-BOT*";
+        ytresult += "Made by Rey ❤️";
         await fakethumb(tbuff, ytresult);
         break;
       case "setreply":
@@ -4584,7 +5385,17 @@ ${anime.desc}\n\n*Link Batch* : ${anime.batch}\n*Link Download SD* : ${anime.bat
           }
         }
         break;
-
+       case "brainly2":
+        brien = body.slice(9)
+					brainly(`${brien}`).then(res => {
+					teks = '───────────\n'
+					for (let Y of res.data) {
+						teks += `\n*「 _BRAINLY_ 」*\n\n*➸ Pertanyaan:* ${Y.pertanyaan}\n\n*➸ Jawaban:* ${Y.jawaban[0].text}\n───────────\n`
+					}
+					client.sendMessage(from, teks, text, {quoted: mek, detectLinks: false})
+                        console.log(res)
+                    })
+                    break;
       case "brainly":
         if (args.length < 1) return reply("Pertanyaan apa");
         brien = args.join(" ");
@@ -4896,9 +5707,12 @@ ${
         break;
       default:
      if (!isGroup && !isCmd) {
-                        simi = await fetchJson(`https://erzaaa.herokuapp.com/api/simsimi/?text=${budy}&apikey=Erzaa`)
-                        reply(simi.result.success)
-                    }
+            if (mek.key.fromMe === false && ! from.includes("status@broadcast")){
+                //await client.updatePresence(from, Presence.composing)
+                simi = await axios.get(`https://erzaaa.herokuapp.com/api/simsimi/?text=${budy}&apikey=Erzaa`)
+                reply(simi.result.success)
+                reply(`error`)
+            }}
         }
 
 //    if (isGroup && !isCmd && isSimi && budy != undefined) {
