@@ -112,6 +112,8 @@ banChats = false;
 offline = false;
 targetpc = "0";
 owner = "6283195138570";
+web = "https://api.reysekha.site",
+web2 = "https://erzaaa.herokuapp.com/api",
 fake = "_Mark ajggg :v_";
 thumb = fs.readFileSync("./reyganz/thumb.jpeg");
 numbernye = "0";
@@ -1691,6 +1693,22 @@ Customize By Rey ❤️ www.reysekha.xyz
             },
           ]);
           break;
+         case "simi":
+                simcok = body.slice(5)
+                sum = await fetchJson (`${web2}/simsimi/?text=${simcok}&apikey=Erzaa`)
+                reply(sum.result.success)
+                break;
+         case "simien":
+                simcok = body.slice(5)
+                sum2 = await fetchJson (`${web2}/simsimi2/?text=${simcok}&lang=en&apikey=Erzaa`)
+                reply(sum2.result.success)
+                break;
+         case "simion":
+                simcok = body.slice(5)
+                sum2 = await fetchJson (`https://api.reysekha.site/simsimi4/?text=${simcok}&lang=bl&apikey=freeapi`)
+                reply(sum2.result.success)
+                break;
+         // Yg ini jangan di ubah bang 
          case "credits":
                    gimana = fs.readFileSync('./stik/thumb.jpeg')
                    ptod = "0@s.whatsapp.net"
