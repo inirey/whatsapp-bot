@@ -21,7 +21,7 @@ nocache("./rey.js", (module) => console.log(`${module} is now updated!`));
 const starts = async (client = new WAConnection()) => {
   client.logger.level = "warn";
   client.version = [2, 2123, 8];
-  client.browserDescription = ["Rey Web", "safari", "3.0"];
+  client.browserDescription = ["Reyganz", "safari", "3.0"];
   console.log(banner.string);
   client.on("qr", () => {
     console.log(
