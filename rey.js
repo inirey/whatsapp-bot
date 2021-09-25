@@ -1,8 +1,5 @@
-//developed by!!
-//YogiPw
-//Rey
-//And all
-
+// thank you for wanting to use this script 
+// Help me saweria.co/inirey
 const sotoy = [
         '🍊 : 🍒 : 🍐 upss coba lagi',
         '🍒 : 🔔 : 🍊 upss coba lagi',
@@ -112,6 +109,7 @@ banChats = false;
 offline = false;
 targetpc = "0";
 owner = "6283195138570";
+apis = "http:api.reysekha.xyz",
 web = "https://api.reysekha.site",
 web2 = "https://erzaaa.herokuapp.com/api",
 fake = "_Mark ajggg :v_";
