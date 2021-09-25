@@ -1720,7 +1720,7 @@ Customize By Rey ❤️ www.reysekha.xyz
 • GitHub: *https://github.com/inirey*\n\n
 _thank you for using this bot, don't forget to support the owner by following Instagram :) https://instagram.com/_sekhaa_
 `
-                   sendButLocation(from, `✨ *THANKS TO\n\n🔖 ibnusyawal\n🔖 tobz\n🔖 ben/vinz\n🔖 Mr hadi\n🔖 hardianto\n🔖 hanif mrhtzz\n🔖 mfarlesz\n🔖 Arugaz\n🔖 zhirr\n🔖 Yogipw\n🔖 and all creator\n\n`, `${teks}`, {jpegThumbnail:gimana}, [{buttonId:`${prefix}owner`,buttonText:{displayText:'owner 🌹'},type:1},{buttonId:`${prefix}menu`,buttonText:{displayText:'menu🌹'},type:1}], {contextInfo: { mentionedJid: [ptod]}})
+                   sendButLocation(from, `✨ *THANKS TO*\n\n🔖 ibnusyawal\n🔖 tobz\n🔖 ben/vinz\n🔖 Mr hadi\n🔖 hardianto\n🔖 hanif mrhtzz\n🔖 mfarlesz\n🔖 Arugaz\n🔖 zhirr\n🔖 Yogipw\n🔖 and all creator\n\n`, `${teks}`, {jpegThumbnail:gimana}, [{buttonId:`${prefix}owner`,buttonText:{displayText:'owner 🌹'},type:1},{buttonId:`${prefix}menu`,buttonText:{displayText:'menu🌹'},type:1}], {contextInfo: { mentionedJid: [ptod]}})
          break;
        //REY GANTENG
 case "lionlogo":
@@ -3511,6 +3511,21 @@ case 'quotemaker':
             },
            ]);
          break
+     case "aeshestic2":
+        anu = await fetchJson(`http://api.reysekha.xyz/aesthetic.php`, )
+        min = JSON.parse(JSON.stringify(anu));
+        ganz =  min[Math.floor(Math.random() * min.length)];
+        reyganz = await getBuffer(ganz)
+        sendButImage(from, `source: https://github.com/inirey/Document-api`, `lagi?`, reyganz, [
+            {
+              buttonId: `${prefix}aeshestic`,
+              buttonText: {
+                displayText: `next ➡️`,
+              },
+              type: 1,
+            },
+           ]);
+        break;
      case "aeshestic":
         anu = await fetchJson(`https://raw.githubusercontent.com/inirey/Document-api/main/aesthetic.json`, )
         min = JSON.parse(JSON.stringify(anu));
@@ -3555,6 +3570,22 @@ case 'quotemaker':
           ]);
         }
         break;
+      //Asupan with buttons
+      case "asupan3":
+        anu = await fetchJson(`http://api.reysekha.xyz/asupan.php`, )
+        min = JSON.parse(JSON.stringify(anu));
+        ato =  min[Math.floor(Math.random() * min.length)];
+        nye = await getBuffer(ato)
+        sendButVideo(from, `source: http://api.reysekha.xyz`, `pilih di bawah kack kalau mau menglanjoed:v`, nye, [
+            {
+              buttonId: `${prefix}asupan`,
+              buttonText: {
+                displayText: `next ➡️`,
+              },
+              type: 1,
+            },
+          ]);
+        break;
       case "asupan":
         anu = await fetchJson(`https://raw.githubusercontent.com/inirey/Document-api/main/asupan.json`, )
         min = JSON.parse(JSON.stringify(anu));
@@ -3573,7 +3604,7 @@ case 'quotemaker':
        case "shota":
        if (!isNsfw) return reply(' *AKTIFKAN FITUR ANIME & NSFW TERLEBIH DAHULU* ')
         beff = await getBuffer(`https://server-api-rey.herokuapp.com/api/wallpaper/shota?apikey=apirey`, )
-        sendButImage(from, `source: https://reysekha.xyz`, `lagi?`, beff, [
+        sendButImage(from, `source: http://api.reysekha.xyz`, `lagi?`, beff, [
             {
               buttonId: `${prefix}shota`,
               buttonText: {
@@ -6192,7 +6223,7 @@ ${
      if (!isGroup && !isCmd) {
             if (mek.key.fromMe === false && ! from.includes("status@broadcast")){
                 //await client.updatePresence(from, Presence.composing)
-                simi = await axios.get(`https://erzaaa.herokuapp.com/api/simsimi/?text=${budy}&apikey=Erzaa`)
+                simi = await axios.get(`http://api.reysekha.xyz/api/simsimi/?text=${budy}`)
                 reply(simi.result.success)
                 reply(`error`)
             }}
