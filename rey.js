@@ -46,7 +46,8 @@ const {
   processTime,
 } = require("@adiwajshing/baileys");
 const simple = require("./lib/simple.js");
-const { virtex, vipi } = require("./lib/virtex.js"); //memans
+const texpro = require("./lib/texpro.js");
+const { virtex, vipi } = require("./lib/virtex.js");
 const hx = require("hxz-api");
 const yo = require("tod-api");
 const qrcode = require("qrcode-terminal");
@@ -112,6 +113,7 @@ banChats = false;
 offline = false;
 targetpc = "0";
 owner = "6283195138570";
+rest = "http://api.reysekha.xyz",
 web = "https://api.reysekha.site",
 web2 = "https://erzaaa.herokuapp.com/api",
 fake = "_Mark ajggg :v_";
@@ -1673,7 +1675,7 @@ break
 🌹 ${prefix}antivirtex
 🌹 ${prefix}kickarea
 
-Customize By Rey ❤️ www.reysekha.xyz
+Customize By Rey ❤️ http://api.reysekha.xyz/api
 `
           sendButLocation(from, `hallo ${pushname} welcome 👋`, `${cmd}`, {jpegThumbnail:pporang}, [{buttonId:`${prefix}ping`,buttonText:{displayText:'ping 🕐'},type:1},{buttonId:`${prefix}donasi`,buttonText:{displayText:'donasi 🎁'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'owner 🌹'},type:1}], {contextInfo: { mentionedJid: [ptod]}})
          break;
@@ -1720,7 +1722,7 @@ Customize By Rey ❤️ www.reysekha.xyz
 • GitHub: *https://github.com/inirey*\n\n
 _thank you for using this bot, don't forget to support the owner by following Instagram :) https://instagram.com/_sekhaa_
 `
-                   sendButLocation(from, `✨ *THANKS TO\n\n🔖 ibnusyawal\n🔖 tobz\n🔖 ben/vinz\n🔖 Mr hadi\n🔖 hardianto\n🔖 hanif mrhtzz\n🔖 mfarlesz\n🔖 Arugaz\n🔖 zhirr\n🔖 Yogipw\n🔖 and all creator\n\n`, `${teks}`, {jpegThumbnail:gimana}, [{buttonId:`${prefix}owner`,buttonText:{displayText:'owner 🌹'},type:1},{buttonId:`${prefix}menu`,buttonText:{displayText:'menu🌹'},type:1}], {contextInfo: { mentionedJid: [ptod]}})
+                   sendButLocation(from, `✨ *THANKS TO\n\n🔖 ibnusyawal\n🔖 tobz\n🔖 ben/vinz\n🔖 Mr hadi\n🔖 hardianto\n🔖 hanif mrhtzz\n🔖 mfarelsz\n🔖 Arugaz\n🔖 zhirr\n🔖 Yogipw\n🔖 and all creator\n\n`, `${teks}`, {jpegThumbnail:gimana}, [{buttonId:`${prefix}owner`,buttonText:{displayText:'owner 🌹'},type:1},{buttonId:`${prefix}menu`,buttonText:{displayText:'menu🌹'},type:1}], {contextInfo: { mentionedJid: [ptod]}})
          break;
        //REY GANTENG
 case "lionlogo":
@@ -3307,6 +3309,82 @@ reply(apa)
               type: 1,
             },
            ]);
+        break;
+      // RANDOM API2
+      case "anjing2":
+        anu = await fetchJson(`${rest}/anjing.php`, )
+        min = JSON.parse(JSON.stringify(anu));                                                                                                       
+        cog =  min[Math.floor(Math.random() * min.length)];
+        apaan = await getBuffer(cog)
+        sendButImage(from, `Source: https://github.com/inirey/Document-api`, `cari lagi? klik di bawah`, apaan, [
+            {
+              buttonId: `${prefix}cogan`,
+              buttonText: {
+                displayText: `next ➡️`,
+              },
+              type: 1,
+            },                                               
+          ]);
+        break;
+      case "asupan2":
+        anu = await fetchJson(`${rest}/asupan.php`, )
+        min = JSON.parse(JSON.stringify(anu));                                                                                                       
+        cog =  min[Math.floor(Math.random() * min.length)];
+        apaan = await getBuffer(cog)
+        sendButImage(from, `Source: https://github.com/inirey/Document-api`, `cari lagi? klik di bawah`, apaan, [
+            {
+              buttonId: `${prefix}cogan`,
+              buttonText: {
+                displayText: `next ➡️`,
+              },
+              type: 1,
+            },                                               
+          ]);
+        break;
+      case "doraemon2":
+        anu = await fetchJson(`${rest}/doraemon.php`, )
+        min = JSON.parse(JSON.stringify(anu));                                                                                                       
+        cog =  min[Math.floor(Math.random() * min.length)];
+        apaan = await getBuffer(cog)
+        sendButImage(from, `Source: https://github.com/inirey/Document-api`, `cari lagi? klik di bawah`, apaan, [
+            {
+              buttonId: `${prefix}cogan`,
+              buttonText: {
+                displayText: `next ➡️`,
+              },
+              type: 1,
+            },                                               
+          ]);
+        break;
+      case "cecan2":
+        anu = await fetchJson(`${rest}/cecan.php`, )
+        min = JSON.parse(JSON.stringify(anu));                                                                                                       
+        cog =  min[Math.floor(Math.random() * min.length)];
+        apaan = await getBuffer(cog)
+        sendButImage(from, `Source: https://github.com/inirey/Document-api`, `cari lagi? klik di bawah`, apaan, [
+            {
+              buttonId: `${prefix}cogan`,
+              buttonText: {
+                displayText: `next ➡️`,
+              },
+              type: 1,
+            },                                               
+          ]);
+        break;
+      case "cogan2":
+        anu = await fetchJson(`${rest}/cogan.php`, )
+        min = JSON.parse(JSON.stringify(anu));                                                                                                       
+        cog =  min[Math.floor(Math.random() * min.length)];
+        apaan = await getBuffer(cog)
+        sendButImage(from, `Source: https://github.com/inirey/Document-api`, `cari lagi? klik di bawah`, apaan, [
+            {
+              buttonId: `${prefix}cogan`,
+              buttonText: {
+                displayText: `next ➡️`,
+              },
+              type: 1,
+            },                                               
+          ]);
         break;
       case "cogan":
         anu = await fetchJson(`https://raw.githubusercontent.com/inirey/Document-api/main/cogan.json`, )
