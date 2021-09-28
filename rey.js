@@ -1,7 +1,11 @@
-//developed by!!
-//YogiPw
-//Rey
-//And all
+// thanks to
+// MRHRTZ
+// Ben
+// Ibnusyawal
+// Mfarelsz
+// HEXAGONZ
+// HARDIANTO
+
 
 const sotoy = [
         '🍊 : 🍒 : 🍐 upss coba lagi',
