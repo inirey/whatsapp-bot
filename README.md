@@ -13,6 +13,9 @@
 <a href="https://github.com/inirey/whatsapp-bot/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/inirey/whatsapp-bot?color=red&style=flat-square"></a>
 </p>
 
+## deploy heroku
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/inirey/tesbot-herokuapp/)
+
 ## Install
 Clone this project
 
