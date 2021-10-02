@@ -14,7 +14,7 @@
 </p>
 
 ## deploy heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/inirey/tesbot-herokuapp/)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/inirey/whatsapp-bot/)
 
 ## Install
 Clone this project
