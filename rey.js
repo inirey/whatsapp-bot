@@ -123,6 +123,7 @@ banChats = false;
 offline = false;
 targetpc = "0";
 owner = "6283195138570";
+julios = "https://juliosz.xyz/myapi",
 rest = "http://api.reysekha.xyz",
 web = "https://api.reysekha.site",
 web2 = "https://erzaaa.herokuapp.com/api",
