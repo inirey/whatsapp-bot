@@ -1,8 +1,8 @@
-// thanks to
+// THANKS ALL
 // MRHRTZ
-// Ben
-// Ibnusyawal
-// Mfarelsz
+// BEN VINZ
+// IBNUSYAWAL
+// MFARELSZ
 // HEXAGONZ
 // HARDIANTO
 
@@ -126,6 +126,7 @@ owner = "6283195138570";
 rest = "http://api.reysekha.xyz",
 web = "https://api.reysekha.site",
 web2 = "https://erzaaa.herokuapp.com/api",
+// toolsApi= "https://tools.helixs.id/home",
 fake = "_Mark ajggg :v_";
 thumb = fs.readFileSync("./reyganz/thumb.jpeg");
 numbernye = "0";
