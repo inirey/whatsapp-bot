@@ -5,7 +5,7 @@
 // MFARELSZ
 // HEXAGONZ
 // HARDIANTO
-
+// YOGIPEWE
 
 const sotoy = [
         '🍊 : 🍒 : 🍐 upss coba lagi',
@@ -122,6 +122,7 @@ const _reminder = JSON.parse(fs.readFileSync("./database/reminder.json"));
 banChats = false;
 offline = false;
 targetpc = "0";
+apirevi = "https://revita.herokuapp.com";
 owner = "6283195138570";
 rest = "http://api.reysekha.xyz",
 web = "https://api.reysekha.site",
@@ -1955,7 +1956,7 @@ case "pornhub":
 				por = body.slice(8)
 				pr = por.split("|")[0];
                 nub = por.split("|")[1];
-				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/textpro/pornhub?text=${pr}&text2=${nub}&apikey=apirey`)
+				anu = await fetchJson(`${apirevi}/api/textpro/pornhub?text=${pr}&text2=${nub}&apikey=ApiRevita`)
 				buffer = await getBuffer(anu.result)
 				sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
             {
@@ -2317,9 +2318,38 @@ case "pp":
           sendMediaURL(from, rey.url, "");
         }
         break;
+// BY REVITA CANS
+
+case 'play':
+				playmp3 = body.slice(9)
+				anu = await fetchJson(`${apirevi}/api/yt/playmp3?query=${playmp3}&apikey=ApiRevita`, {method: 'get'})
+				infomp3 = `「 *YOUTUBE PLAY MP3* 」\n\n*• Judul:* ${anu.title}\n*• Chanel:* ${anu.channel}\n*• Published:* ${anu.published}\n*• View:* ${anu.views}\n\n _*AUDIO SEDANG DI KIRIM*_`
+				buffer = await getBuffer(anu.thumb)
+				client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+				lagu = await getBuffer(anu.url)
+				client.sendMessage(from, lagu, audio, )
+				break;
+case 'play2':
+				playmp3 = body.slice(9)
+				anu = await fetchJson(`${apirevi}/api/yt/playmp3?query=${playmp3}&apikey=ApiRevita`, {method: 'get'})
+				infomp3 = `「 *YOUTUBE PLAY MP3* 」\n\n*• Judul:* ${anu.title}\n*• Chanel:* ${anu.channel}\n*• Published:* ${anu.published}\n*• View:* ${anu.views}\n\n _*AUDIO SEDANG DI KIRIM*_`
+				buffer = await getBuffer(anu.thumb)
+				client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+				lagu = await getBuffer(anu.url)
+				client.sendMessage(from, lagu, audio, )
+				break;
+case 'play3':
+				playmp3 = body.slice(9)
+				anu = await fetchJson(`${apirevi}/api/yt/playmp3?query=${playmp3}&apikey=ApiRevita`, {method: 'get'})
+				infomp3 = `「 *YOUTUBE PLAY MP3* 」\n\n*• Judul:* ${anu.title}\n*• Chanel:* ${anu.channel}\n*• Published:* ${anu.published}\n*• View:* ${anu.views}\n\n _*AUDIO SEDANG DI KIRIM*_`
+				buffer = await getBuffer(anu.thumb)
+				client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
+				lagu = await getBuffer(anu.url)
+				client.sendMessage(from, lagu, audio, )
+				break;
  case 'play3':
 				playmp3 = body.slice(9)
-				anu = await fetchJson(`https://server-api-rey.herokuapp.com/api/yt/playmp3?query=${playmp3}&apikey=apirey`, {method: 'get'})
+				anu = await fetchJson(`${apirevi}/api/yt/playmp3?query=${playmp3}&apikey=ApiRevita`, {method: 'get'})
 				infomp3 = `「 *YOUTUBE PLAY MP3* 」\n\n*• Judul:* ${anu.title}\n*• Chanel:* ${anu.channel}\n*• Published:* ${anu.published}\n*• View:* ${anu.views}\n\n _*AUDIO SEDANG DI KIRIM*_`
 				buffer = await getBuffer(anu.thumb)
 				client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
@@ -2340,7 +2370,7 @@ case "marveltext2":
                maa = body.slice(12)
                mar = maa.split("|")[0];
                vel = maa.split("|")[1];
-               anu = await fetchJson (`https://server-api-rey.herokuapp.com/api/textpro/marvel-logo2?text=${mar}&text2=${vel}&apikey=apirey`, )
+               anu = await fetchJson(`${apirevi}/api/textpro/marvel-logo2?text=${mar}&text2=${vel}&apikey=ApiRevita`, )
                buffer = await getBuffer (anu.result)
                sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
             {
@@ -2374,7 +2404,7 @@ case "marveltext":
                ma = body.slice(11)
                mar = ma.split("|")[0];
                vel = ma.split("|")[1];
-               anu = await fetchJson (`https://server-api-rey.herokuapp.com/api/textpro/marvel-logo?text=${mar}&text2=${vel}&apikey=apirey`, )
+               anu = await fetchJson (`${apirevi}/api/textpro/marvel-logo?text=${mar}&text2=${vel}&apikey=ApiRevita`, )
                buffer = await getBuffer (anu.result)
                sendButImage(from, `berhasil di buat ${pushname}`, `Made by Rey ❤️`, buffer, [
             {
@@ -2597,12 +2627,43 @@ sendButImage(from, `nihhh ngab🗿`, `lanjut?`, anu, [
 				const kah = apakahh[Math.floor(Math.random() * apakahh.length)]
 				client.sendMessage(from, 'Pertanyaan : *'+apakah+'*\n\nJawaban : '+ kah, text, { quoted: mek })
 			 break
+// REST API BY REVITA
+case 'shinomiya':
+        if (!isNsfw) return reply(' *AKTIFKAN FITUR ANIME & NSFW TERLEBIH DAHULU* ')
+        if (!isGroup) return reply(mess.only.group);
+        aku = (`${apirevi}/api/wallpaper/shinomiya?apikey=ApiRevita`)
+        kon = await getBuffer(aku)
+        sendButImage(from, `nihhh`, `lanjut?`, kon, [
+            {
+              buttonId: `${prefix}shinomiya`,
+              buttonText: {
+                displayText: `again ➡️`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
+case 'shizuka':
+        if (!isNsfw) return reply(' *AKTIFKAN FITUR ANIME & NSFW TERLEBIH DAHULU* ')
+        if (!isGroup) return reply(mess.only.group);
+        aku = (`${apirevi}/api/wallpaper/shizuka?apikey=ApiRevita`)
+        kon = await getBuffer(aku)
+        sendButImage(from, `nihhh`, `lanjut?`, kon, [
+            {
+              buttonId: `${prefix}shizuka`,
+              buttonText: {
+                displayText: `again ➡️`,
+              },
+              type: 1,
+            },
+          ]);
+          break;
 case 'anal':
         if (!isNsfw) return reply(' *AKTIFKAN FITUR ANIME & NSFW TERLEBIH DAHULU* ')
         if (!isGroup) return reply(mess.only.group);
-aku = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=anal&apikey=hardianto`)
-kon = await getBuffer(aku)
-sendButImage(from, `nihhh ngab🗿`, `lanjut?`, kon, [
+        aku = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=anal&apikey=hardianto`)
+        kon = await getBuffer(aku)
+        sendButImage(from, `nihhh ngab🗿`, `lanjut?`, kon, [
             {
               buttonId: `${prefix}anal`,
               buttonText: {
