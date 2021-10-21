@@ -43,5 +43,4 @@ Run the Whatsapp bot
 
 [![Rey](https://avatars.githubusercontent.com/u/85196372?v=4.png?size=100)](https://github.com/inirey) | [![Revita](https://avatars.githubusercontent.com/u/91856758?s=400&u=77fb74ff0f901eb7241337880416d7ee27a5b4a3&v=4.png?size=100)](https://github.com/revitaa)
 ----|----
-[Rey](https://github.com/inirey) | [Revita](https://github.com/revitaa)
- Author | Contributor
+[Rey](https://github.com/inirey)Author | Contributor
