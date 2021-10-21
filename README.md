@@ -1,12 +1,11 @@
 <p align="center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm_viVue7cigCbzc_puEEqJzzzImgaIyviKg&usqp=CAU" width="128" height="128"/>
 </p>
 <!-- <img src="https://raw.githubusercontent.com/MRHRTZ/DGC-ChatBotV3/main/media/img/dgc.jpg" width="128" height="128"/> -->
+<p align="center">
+<a href="//github.com/inirey"><img src="https://img.shields.io/badge/Author-Rey-red.svg?style=for-the-badge&logo=github"/><a/>
 </p>
 <p align="center">
-<a href="#"><img title="Erza-Bot" src="https://img.shields.io/badge/Erza Bot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
-</p>
-<p align="center">
-<a href="https://github.com/inirey"><img title="Author" src="https://img.shields.io/badge/Author-REY-red.svg?style=for-the-badge&logo=github"></a>
+<a href="https://javascript.com"><img src="https://img.shields.io/badge/Made%20With-javascript-cyan.svg?style=for-the-badge&logo=javascript"/><a/>
 </p>
 <p align="center">
 <a href="https://github.com/inirey/whatsapp-bot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/inirey/whatsapp-bot?color=red&style=flat-square"></a>
