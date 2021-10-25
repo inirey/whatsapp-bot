@@ -133,6 +133,7 @@ thumb = fs.readFileSync("./reyganz/thumb.jpeg");
 numbernye = "0";
 waktu = "-";
 limitt = setting.limitt
+apiRest = settingcok.apiRest
 alasan = "-";
 autojoin = false;
 prefixStatus = true;
@@ -1398,11 +1399,8 @@ break
            ]);
           break;
       case 'wallmuslim':
-	   anu = await fetchJson(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Islamic.json`, {method: 'get'})
+	   muss = await getBuffer(`${apiRest_apirey}api/wallpaper/muslim?apikey=apirey`, {method: 'get'})
 	   reply('Tunggu Ya Kak')
-	   var n = JSON.parse(JSON.stringify(anu));
-	   var nimek =  n[Math.floor(Math.random() * n.length)];
-	   muss = await getBuffer(nimek)
 	   sendButImage(from, `wallpaper nya kak`, `Made by Rey ❤️`, muss, [
             {
               buttonId: `${prefix}wallmuslim`,
