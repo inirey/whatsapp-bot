@@ -121,11 +121,12 @@ const _reminder = JSON.parse(fs.readFileSync("./database/reminder.json"));
 
 banChats = false;
 offline = false;
-targetpc = "0";
+targetpc = "0"
+ReyApis =`https://api-reysekha.herokuapp.com`;
 apirevi = "https://revita.herokuapp.com";
 owner = "6283195138570";
 julios = "https://juliosz.xyz/myapi",
-rest = "http://api.reysekha.xyz",
+rest = "https://api.reysekha.xyz",
 web = "https://api.reysekha.site",
 web2 = "https://erzaaa.herokuapp.com/api",
 // toolsApi= "https://tools.helixs.id/home",
