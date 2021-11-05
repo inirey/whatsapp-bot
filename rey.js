@@ -130,6 +130,7 @@ waktu = "-";
 limitt = setting.limitt
 //apiRest = settingcok.apiRest
 apirey = settingcok.apirey
+apirevi = settingcok.apirevi
 apimrhadi = settingcok.apimrhadi
 apiveza = settingcok.apiveza
 apizeks = settingcok.apizeks
