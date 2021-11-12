@@ -17,8 +17,8 @@
 ## deploy heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/inirey/whatsapp-bot/)
 
-## WHATSAPP BOT NODE JS 
-<a href="https://chat.whatsapp.com/BsC3U7tjBuq6vBXOa4Wh9j"><img title="WHATSAPP GROUP" src="https://img.shields.io/badge/Whatsapp Group-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+## WHATSAPP BOT GROUP
+<a href="https://chat.whatsapp.com/DuD2DZuFNiYF2E9CCXHIWh"><img title="WHATSAPP GROUP" src="https://img.shields.io/badge/Whatsapp Group-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 
 ## Install
 Clone this project
