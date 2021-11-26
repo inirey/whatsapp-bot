@@ -1,7 +1,9 @@
 {
     "apirey" : "https://server-api-rey.herokuapp.com",
     "apirey2": "https://api-reysekha.herokuapp.com",
-    "apijson": "http://api.reysekha.xyz",
+    "apijson": "https://api.reysekha.xyz",
+    "apiLol": "https://api.lolhuman.xyz",
+    "apiXteam": "https://api.xteam.xyz",
     "apizeks": "https://api.zeks.me",
     "apiveza": "https://vhtear.com",
     "apirevi": "https://revita.herokuapp.com",
