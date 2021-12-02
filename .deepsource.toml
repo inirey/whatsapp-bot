@@ -1,0 +1,19 @@
+version = 1
+
+[[analyzers]]
+name = "shell"
+enabled = true
+
+[[analyzers]]
+name = "javascript"
+enabled = true
+
+  [analyzers.meta]
+  plugins = [
+    "vue",
+    "react",
+    "ember",
+    "meteor",
+    "angular",
+    "angularjs"
+  ]
