@@ -14,6 +14,7 @@ global.APIs = { // API Prefix
   pencarikode: 'https://api.chipa.xyz',
   xteam: 'https://api.xteam.xyz',
   fxc7: 'https://api-xcoders.xyz',
+  erza: 'https://api.erzaa.space',
   cakra: 'https://cakrayp.herokuapp.com',
   zahir: 'https://zahirr-web.herokuapp.com',
   zekais: 'http://zekais-api.herokuapp.com',
@@ -22,6 +23,7 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey nya disini
   // 'https://website': 'apikey'
   'https://api-xcoders.xyz': 'APIKEYMU',
+  'https://api-erzaa.space': 'APIKEYMU'
   'https://server-api-rey.herokuapp.com': 'APIKEYMU',
   'https://bx-hunter.herokuapp.com': 'APIKEYMU',
   'https://hardianto-chan.herokuapp.com': 'APIKEYMU',
@@ -30,7 +32,7 @@ global.APIKeys = { // APIKey nya disini
   'https://cakrayp.herokuapp.com': 'APIKEYMU',
   'https://api.xteam.xyz': 'APIKEYMU',
   'https://zahirr-web.herokuapp.com': 'APIKEYMU',
-  'https://api.zeks.xyz': 'APIKEYMU',
+  'https://api.zeks.me': 'APIKEYMU',
 }
 
 // Sticker WM
@@ -40,7 +42,8 @@ global.author = 'ig @_sekhaa'
 global.wait = '☕ _Tunggu Permintaan kamu sedang di proses..._'
 global.eror = '❌ _Maaf Erorr silahkan hubungi owner_'
 global.fot = '© erzabot'
-global.ban = '❌ _Maaf kamu di banned silahkan hubungi owner_
+global.mut = '❌ _Erza di mute silahkan unmute untuk mengaktifkan kembali'
+global.ban = '❌ _Maaf kamu di banned silahkan hubungi owner_'
 global.fla = 'https://hadi-api.herokuapp.com/api/photoxy/smoke-typography?teks='
 
 global.multiplier = 50 // Semakin tinggi, semakin sulit naik level
