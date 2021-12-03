@@ -1,4 +1,4 @@
-console.log('Memulai...')
+console.log('WAITING.....')
 let { spawn } = require('child_process')
 let path = require('path')
 let fs = require('fs')
@@ -57,4 +57,4 @@ function start(file) {
   // console.log(p)
 }
 
-start('main.js')
+start('MsgHandler.js')
