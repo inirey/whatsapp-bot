@@ -52,3 +52,7 @@ Run the Whatsapp bot
 ```bash
 > node . --server
 ```
+
+### Thanks To 
+[`@Nurutomo`](https://github.com/Nurutomo)
+[`@ariffb`](https://github.com/ariffb25)
