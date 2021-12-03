@@ -1,0 +1,697 @@
+{
+  "result": [
+    {
+      "number": "1",
+      "latin": "Ar Rahman",
+      "arab": "الرَّحْمَنُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Pemurah",
+      "translate_en": "The All Beneficent"
+    },
+    {
+      "number": "2",
+      "latin": "Ar Rahiim",
+      "arab": "الرَّحِيمُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Penyayang",
+      "translate_en": "The Most Merciful"
+    },
+    {
+      "number": "3",
+      "latin": "Al Malik",
+      "arab": "الْمَلِكُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Merajai/Memerintah",
+      "translate_en": "The King, The Sovereign"
+    },
+    {
+      "number": "4",
+      "latin": "Al Quddus",
+      "arab": "الْقُدُّوسُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Suci",
+      "translate_en": "The Most Holy"
+    },
+    {
+      "number": "5",
+      "latin": "As Salaam",
+      "arab": "السَّلاَمُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Memberi Kesejahteraan",
+      "translate_en": "Peace and Blessing"
+    },
+    {
+      "number": "6",
+      "latin": "Al Mu’min",
+      "arab": "الْمُؤْمِنُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Memberi Keamanan",
+      "translate_en": "The Guarantor"
+    },
+    {
+      "number": "7",
+      "latin": "Al Muhaimin",
+      "arab": "الْمُهَيْمِنُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Pemelihara",
+      "translate_en": "The Guardian, the Preserver"
+    },
+    {
+      "number": "8",
+      "latin": "Al ‘Aziiz",
+      "arab": "الْعَزِيزُ",
+      "translate_id": "Yang Memiliki Mutlak Kegagahan",
+      "translate_en": "The Almighty, the Self Sufficient"
+    },
+    {
+      "number": "9",
+      "latin": "Al Jabbar",
+      "arab": "الْجَبَّارُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Perkasa",
+      "translate_en": "The Powerful, the Irresistible"
+    },
+    {
+      "number": "10",
+      "latin": "Al Mutakabbir",
+      "arab": "الْمُتَكَبِّرُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Megah,Yang Memiliki Kebesaran",
+      "translate_en": "The Tremendous"
+    },
+    {
+      "number": "11",
+      "latin": "Al Khaliq",
+      "arab": "الْخَالِقُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Pencipta",
+      "translate_en": "The Creator"
+    },
+    {
+      "number": "12",
+      "latin": "Al Baari’",
+      "arab": "الْبَارِئُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Yang Melepaskan(Membuat, Membentuk, Menyeimbangkan)",
+      "translate_en": "The Maker"
+    },
+    {
+      "number": "13",
+      "latin": "Al Mushawwir",
+      "arab": "الْمُصَوِّرُ",
+      "translate_id": "Yang Memiliki Mutlak sifat YangMembentuk Rupa (makhluknya)",
+      "translate_en": "The Fashioner of Forms"
+    },
+    {
+      "number": "14",
+      "latin": "Al Ghaffaar",
+      "arab": "الْغَفَّارُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Pengampun",
+      "translate_en": "The Ever Forgiving"
+    },
+    {
+      "number": "15",
+      "latin": "Al Qahhaar",
+      "arab": "الْقَهَّارُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Memaksa",
+      "translate_en": "The All Compelling Subduer"
+    },
+    {
+      "number": "16",
+      "latin": "Al Wahhaab",
+      "arab": "الْوَهَّابُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Pemberi Karunia",
+      "translate_en": "The Bestower"
+    },
+    {
+      "number": "17",
+      "latin": "Ar Razzaaq",
+      "arab": "الرَّزَّاقُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Pemberi Rejeki",
+      "translate_en": "The Ever Providing"
+    },
+    {
+      "number": "18",
+      "latin": "Al Fattaah",
+      "arab": "الْفَتَّاحُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Pembuka Rahmat",
+      "translate_en": "The Opener, the Victory Giver"
+    },
+    {
+      "number": "19",
+      "latin": "Al ‘Aliim",
+      "arab": "اَلْعَلِيْمُ",
+      "translate_id": "Yang Memiliki Mutlak sifatMengetahui (Memiliki Ilmu)",
+      "translate_en": "The All Knowing, the Omniscient"
+    },
+    {
+      "number": "20",
+      "latin": "Al Qaabidh",
+      "arab": "الْقَابِضُ",
+      "translate_id": "Yang Memiliki Mutlak sifat YangMenyempitkan (makhluknya)",
+      "translate_en": "The Restrainer, the Straightener"
+    },
+    {
+      "number": "21",
+      "latin": "Al Baasith",
+      "arab": "الْبَاسِطُ",
+      "translate_id": "Yang Memiliki Mutlak sifat YangMelapangkan (makhluknya)",
+      "translate_en": "The Expander, the Munificent"
+    },
+    {
+      "number": "22",
+      "latin": "Al Khaafidh",
+      "arab": "الْخَافِضُ",
+      "translate_id": "Yang Memiliki Mutlak sifat YangMerendahkan (makhluknya)",
+      "translate_en": "The Abaser"
+    },
+    {
+      "number": "23",
+      "latin": "Ar Raafi’",
+      "arab": "الرَّافِعُ",
+      "translate_id": "Yang Memiliki Mutlak sifat YangMeninggikan (makhluknya)",
+      "translate_en": "The Exalter"
+    },
+    {
+      "number": "24",
+      "latin": "Al Mu’izz",
+      "arab": "الْمُعِزُّ",
+      "translate_id": "Yang Memiliki Mutlak sifat YangMemuliakan (makhluknya)",
+      "translate_en": "The Giver of Honor"
+    },
+    {
+      "number": "25",
+      "latin": "Al Mudzil",
+      "arab": "المُذِلُّ",
+      "translate_id": "Yang Memiliki Mutlak sifatYang Menghinakan (makhluknya)",
+      "translate_en": "The Giver of Dishonor"
+    },
+    {
+      "number": "26",
+      "latin": "Al Samii’",
+      "arab": "السَّمِيعُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mendengar",
+      "translate_en": "The All Hearing"
+    },
+    {
+      "number": "27",
+      "latin": "Al Bashiir",
+      "arab": "الْبَصِيرُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Melihat",
+      "translate_en": "The All Seeing"
+    },
+    {
+      "number": "28",
+      "latin": "Al Hakam",
+      "arab": "الْحَكَمُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Menetapkan",
+      "translate_en": "The Judge, the Arbitrator"
+    },
+    {
+      "number": "29",
+      "latin": "Al ‘Adl",
+      "arab": "الْعَدْلُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Adil",
+      "translate_en": "The Utterly Just"
+    },
+    {
+      "number": "30",
+      "latin": "Al Lathiif",
+      "arab": "اللَّطِيفُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Lembut",
+      "translate_en": "The Subtly Kind"
+    },
+    {
+      "number": "31",
+      "latin": "Al Khabiir",
+      "arab": "الْخَبِيرُ",
+      "translate_id": "Yang Memiliki Mutlak sifatMaha Mengetahui Rahasia",
+      "translate_en": "The All Aware"
+    },
+    {
+      "number": "32",
+      "latin": "Al Haliim",
+      "arab": "الْحَلِيمُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Penyantun",
+      "translate_en": "The Forbearing, the Indulgent"
+    },
+    {
+      "number": "33",
+      "latin": "Al ‘Azhiim",
+      "arab": "الْعَظِيمُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Agung",
+      "translate_en": "The Magnificent, the Infinite"
+    },
+    {
+      "number": "34",
+      "latin": "Al Ghafuur",
+      "arab": "الْغَفُورُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Pengampun",
+      "translate_en": "The All Forgiving"
+    },
+    {
+      "number": "35",
+      "latin": "As Syakuur",
+      "arab": "الشَّكُورُ",
+      "translate_id": "Yang Memiliki Mutlak sifat MahaPembalas Budi (Menghargai)",
+      "translate_en": "The Grateful"
+    },
+    {
+      "number": "36",
+      "latin": "Al ‘Aliy",
+      "arab": "الْعَلِيُّ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Tinggi",
+      "translate_en": "The Sublimely Exalted"
+    },
+    {
+      "number": "37",
+      "latin": "Al Kabiir",
+      "arab": "الْكَبِيرُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Besar",
+      "translate_en": "The Great"
+    },
+    {
+      "number": "38",
+      "latin": "Al Hafizh",
+      "arab": "الْحَفِيظُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Menjaga",
+      "translate_en": "The Preserver"
+    },
+    {
+      "number": "39",
+      "latin": "Al Muqiit",
+      "arab": "المُقيِت",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Pemberi Kecukupan",
+      "translate_en": "The Nourisher"
+    },
+    {
+      "number": "40",
+      "latin": "Al Hasiib",
+      "arab": "الْحسِيبُ",
+      "translate_id": "Yang Memiliki Mutlak sifat MahaMembuat Perhitungan",
+      "translate_en": "The Reckoner"
+    },
+    {
+      "number": "41",
+      "latin": "Al Jaliil",
+      "arab": "الْجَلِيلُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mulia",
+      "translate_en": "The Majestic"
+    },
+    {
+      "number": "42",
+      "latin": "Al Kariim",
+      "arab": "الْكَرِيمُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Pemurah",
+      "translate_en": "The Bountiful, the Generous"
+    },
+    {
+      "number": "43",
+      "latin": "Ar Raqiib",
+      "arab": "الرَّقِيبُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mengawasi",
+      "translate_en": "The Watchful"
+    },
+    {
+      "number": "44",
+      "latin": "Al Mujiib",
+      "arab": "الْمُجِيبُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mengabulkan",
+      "translate_en": "The Responsive, the Answerer"
+    },
+    {
+      "number": "45",
+      "latin": "Al Waasi’",
+      "arab": "الْوَاسِعُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Luas",
+      "translate_en": "The Vast, the All Encompassing"
+    },
+    {
+      "number": "46",
+      "latin": "Al Hakiim",
+      "arab": "الْحَكِيمُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maka Bijaksana",
+      "translate_en": "The Wise"
+    },
+    {
+      "number": "47",
+      "latin": "Al Waduud",
+      "arab": "الْوَدُودُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Pencinta",
+      "translate_en": "The Loving, the Kind One"
+    },
+    {
+      "number": "48",
+      "latin": "Al Majiid",
+      "arab": "الْمَجِيدُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mulia",
+      "translate_en": "The All Glorious"
+    },
+    {
+      "number": "49",
+      "latin": "Al Baa’its",
+      "arab": "الْبَاعِثُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Membangkitkan",
+      "translate_en": "The Raiser of the Dead"
+    },
+    {
+      "number": "50",
+      "latin": "As Syahiid",
+      "arab": "الشَّهِيدُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Menyaksikan",
+      "translate_en": "The Witness"
+    },
+    {
+      "number": "51",
+      "latin": "Al Haqq",
+      "arab": "الْحَقُّ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Benar",
+      "translate_en": "The Truth, the Real"
+    },
+    {
+      "number": "52",
+      "latin": "Al Wakiil",
+      "arab": "الْوَكِيلُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Memelihara",
+      "translate_en": "The Trustee, the Dependable"
+    },
+    {
+      "number": "53",
+      "latin": "Al Qawiyyu",
+      "arab": "الْقَوِيُّ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Kuat",
+      "translate_en": "The Strong"
+    },
+    {
+      "number": "54",
+      "latin": "Al Matiin",
+      "arab": "الْمَتِينُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Kokoh",
+      "translate_en": "The Firm, the Steadfast"
+    },
+    {
+      "number": "55",
+      "latin": "Al Waliyy",
+      "arab": "الْوَلِيُّ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Melindungi",
+      "translate_en": "The Protecting Friend, Patron, and Helper"
+    },
+    {
+      "number": "56",
+      "latin": "Al Hamiid",
+      "arab": "الْحَمِيدُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Terpuji",
+      "translate_en": "The All Praiseworthy"
+    },
+    {
+      "number": "57",
+      "latin": "Al Mushii",
+      "arab": "الْمُحْصِي",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mengkalkulasi",
+      "translate_en": "The Accounter, the Numberer of All"
+    },
+    {
+      "number": "58",
+      "latin": "Al Mubdi’",
+      "arab": "الْمُبْدِئُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Memulai",
+      "translate_en": "The Producer, Originator, and Initiator of all"
+    },
+    {
+      "number": "59",
+      "latin": "Al Mu’iid",
+      "arab": "الْمُعِيدُ",
+      "translate_id": "Yang Memiliki Mutlak sifat MahaMengembalikan Kehidupan",
+      "translate_en": "The Reinstater Who Brings Back All"
+    },
+    {
+      "number": "60",
+      "latin": "Al Muhyii",
+      "arab": "الْمُحْيِي",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Menghidupkan",
+      "translate_en": "The Giver of Life"
+    },
+    {
+      "number": "61",
+      "latin": "Al Mumiitu",
+      "arab": "اَلْمُمِيتُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mematikan",
+      "translate_en": "The Bringer of Death, the Destroyer"
+    },
+    {
+      "number": "62",
+      "latin": "Al Hayyu",
+      "arab": "الْحَيُّ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Hidup",
+      "translate_en": "The Ever Living"
+    },
+    {
+      "number": "63",
+      "latin": "Al Qayyuum",
+      "arab": "الْقَيُّومُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mandiri",
+      "translate_en": "The Self Subsisting Sustainer of All"
+    },
+    {
+      "number": "64",
+      "latin": "Al Waajid",
+      "arab": "الْوَاجِدُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Penemu",
+      "translate_en": "The Perceiver, the Finder, the Unfailing"
+    },
+    {
+      "number": "65",
+      "latin": "Al Maajid",
+      "arab": "الْمَاجِدُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mulia",
+      "translate_en": "The Illustrious, the Magnificent"
+    },
+    {
+      "number": "66",
+      "latin": "Al Wahiid",
+      "arab": "الْواحِدُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Tunggal",
+      "translate_en": "The One, The Unique, Manifestation of Unity"
+    },
+    {
+      "number": "67",
+      "latin": "Al ‘Ahad",
+      "arab": "اَلاَحَدُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Esa",
+      "translate_en": "The One, the All Inclusive, the Indivisible"
+    },
+    {
+      "number": "68",
+      "latin": "As Shamad",
+      "arab": "الصَّمَدُ",
+      "translate_id": "Yang Memiliki Mutlak sifat MahaDibutuhkan, Tempat Meminta",
+      "translate_en": "The Self Sufficient, the Impregnable,the Eternally Besought of All, the Everlasting"
+    },
+    {
+      "number": "69",
+      "latin": "Al Qaadir",
+      "arab": "الْقَادِرُ",
+      "translate_id": "Yang Memiliki Mutlak sifat MahaMenentukan, Maha Menyeimbangkan",
+      "translate_en": "The All Able"
+    },
+    {
+      "number": "70",
+      "latin": "Al Muqtadir",
+      "arab": "الْمُقْتَدِرُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Berkuasa",
+      "translate_en": "The All Determiner, the Dominant"
+    },
+    {
+      "number": "71",
+      "latin": "Al Muqaddim",
+      "arab": "الْمُقَدِّمُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mendahulukan",
+      "translate_en": "The Expediter, He who brings forward"
+    },
+    {
+      "number": "72",
+      "latin": "Al Mu’akkhir",
+      "arab": "الْمُؤَخِّرُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mengakhirkan",
+      "translate_en": "The Delayer, He who puts far away"
+    },
+    {
+      "number": "73",
+      "latin": "Al Awwal",
+      "arab": "الأوَّلُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Awal",
+      "translate_en": "The First"
+    },
+    {
+      "number": "74",
+      "latin": "Al Aakhir",
+      "arab": "الآخِرُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Akhir",
+      "translate_en": "The Last"
+    },
+    {
+      "number": "75",
+      "latin": "Az Zhaahir",
+      "arab": "الظَّاهِرُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Nyata",
+      "translate_en": "The Manifest; the All Victorious"
+    },
+    {
+      "number": "76",
+      "latin": "Al Baathin",
+      "arab": "الْبَاطِنُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Ghaib",
+      "translate_en": "The Hidden; the All Encompassing"
+    },
+    {
+      "number": "77",
+      "latin": "Al Waali",
+      "arab": "الْوَالِي",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Memerintah",
+      "translate_en": "The Patron"
+    },
+    {
+      "number": "78",
+      "latin": "Al Muta’aalii",
+      "arab": "الْمُتَعَالِي",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Tinggi",
+      "translate_en": "The Self Exalted"
+    },
+    {
+      "number": "79",
+      "latin": "Al Barri",
+      "arab": "الْبَرُّ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Penderma",
+      "translate_en": "The Most Kind and Righteous"
+    },
+    {
+      "number": "80",
+      "latin": "At Tawwaab",
+      "arab": "التَّوَابُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Penerima Tobat",
+      "translate_en": "The Ever Returning, Ever Relenting"
+    },
+    {
+      "number": "81",
+      "latin": "Al Muntaqim",
+      "arab": "الْمُنْتَقِمُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Penuntut Balas",
+      "translate_en": "The Avenger"
+    },
+    {
+      "number": "82",
+      "latin": "Al Afuww",
+      "arab": "العَفُوُّ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Pemaaf",
+      "translate_en": "The Pardoner, the Effacer of Sins"
+    },
+    {
+      "number": "83",
+      "latin": "Ar Ra`uuf",
+      "arab": "الرَّؤُوفُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Pengasih",
+      "translate_en": "The Compassionate, the All Pitying"
+    },
+    {
+      "number": "84",
+      "latin": "Malikul Mulk",
+      "arab": "مَالِكُ الْمُلْكِ",
+      "translate_id": "Yang Memiliki Mutlak sifatPenguasa Kerajaan (Semesta)",
+      "translate_en": "The Owner of All Sovereignty"
+    },
+    {
+      "number": "85",
+      "latin": "Dzul JalaaliWal Ikraam",
+      "arab": "ذُوالْجَلاَلِوَالإكْرَامِ",
+      "translate_id": "Yang Memiliki Mutlak sifat PemilikKebesaran dan Kemuliaan",
+      "translate_en": "The Lord of Majesty and Generosity"
+    },
+    {
+      "number": "86",
+      "latin": "Al Muqsith",
+      "arab": "الْمُقْسِطُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Adil",
+      "translate_en": "The Equitable, the Requiter"
+    },
+    {
+      "number": "87",
+      "latin": "Al Jamii’",
+      "arab": "الْجَامِعُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mengumpulkan",
+      "translate_en": "The Gatherer, the Unifier"
+    },
+    {
+      "number": "88",
+      "latin": "Al Ghaniyy",
+      "arab": "الْغَنِيُّ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Berkecukupan",
+      "translate_en": "The All Rich, the Independent"
+    },
+    {
+      "number": "89",
+      "latin": "Al Mughnii",
+      "arab": "الْمُغْنِي",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Memberi Kekayaan",
+      "translate_en": "The Enricher, the Emancipator"
+    },
+    {
+      "number": "90",
+      "latin": "Al Maani",
+      "arab": "اَلْمَانِعُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Mencegah",
+      "translate_en": "The Withholder, the Shielder, the Defender"
+    },
+    {
+      "number": "91",
+      "latin": "Ad Dhaar",
+      "arab": "الضَّارَّ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Memberi Derita",
+      "translate_en": "The Distressor, the Harmer"
+    },
+    {
+      "number": "92",
+      "latin": "An Nafii’",
+      "arab": "النَّافِعُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Memberi Manfaat",
+      "translate_en": "The Propitious, the Benefactor"
+    },
+    {
+      "number": "93",
+      "latin": "An Nuur",
+      "arab": "النُّورُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Bercahaya(Menerangi, Memberi Cahaya)",
+      "translate_en": "The Light"
+    },
+    {
+      "number": "94",
+      "latin": "Al Haadii",
+      "arab": "الْهَادِي",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Pemberi Petunjuk",
+      "translate_en": "The Guide"
+    },
+    {
+      "number": "95",
+      "latin": "Al Baadii",
+      "arab": "الْبَدِيعُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Pencipta",
+      "translate_en": "Incomparable, the Originator"
+    },
+    {
+      "number": "96",
+      "latin": "Al Baaqii",
+      "arab": "اَلْبَاقِي",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Kekal",
+      "translate_en": "The Ever Enduring and Immutable"
+    },
+    {
+      "number": "97",
+      "latin": "Al Waarits",
+      "arab": "الْوَارِثُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Pewaris",
+      "translate_en": "The Heir, the Inheritor of All"
+    },
+    {
+      "number": "98",
+      "latin": "Ar Rasyiid",
+      "arab": "الرَّشِيدُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Pandai",
+      "translate_en": "The Guide, Infallible Teacher, and Knower"
+    },
+    {
+      "number": "99",
+      "latin": "As Shabuur",
+      "arab": "الصَّبُورُ",
+      "translate_id": "Yang Memiliki Mutlak sifat Maha Sabar",
+      "translate_en": "The Patient"
+    }
+  ]
+}
