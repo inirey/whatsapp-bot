@@ -14,8 +14,15 @@
 <a href="https://github.com/inirey/whatsapp-bot/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/inirey/whatsapp-bot?color=red&style=flat-square"></a>
 </p>
 
-## deploy heroku
+## DEPLOY HEROKUAPP
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/inirey/whatsapp-bot/)
+
+## ADD BUILDPACK HEROKU
+* heroku/nodejs
+* https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
+* https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git
+
+---------
 
 ## WHATSAPP BOT GROUP
 <a href="https://chat.whatsapp.com/DuD2DZuFNiYF2E9CCXHIWh"><img title="WHATSAPP GROUP" src="https://img.shields.io/badge/Whatsapp Group-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
@@ -24,9 +31,14 @@
 Clone this project
 
 ```bash
-> https://github.com/inirey/whatsapp-bot.git
-> cd whatsapp-bot
+git clone https://github.com/inirey/whatsapp-bot
+cd whatsapp-bot
+npm i
+npm update
+node . --server
 ```
+
+---------
 
 Install the dependencies:
 
@@ -38,5 +50,5 @@ Install the dependencies:
 Run the Whatsapp bot
 
 ```bash
-> npm start
+> node . --server
 ```
