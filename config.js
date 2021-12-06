@@ -5,6 +5,7 @@ global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna pre
 global.APIs = { // API Prefix
   // nama: 'https://website'
   bx: 'https://bx-hunter.herokuapp.com',
+  rev: 'https://revita.herokuapp.com',
   rey: 'https://server-api-rey.herokuapp.com',
   dhnjing: 'https://dhnjing.xyz',
   hardianto: 'https://hardianto-chan.herokuapp.com',
@@ -22,8 +23,9 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey nya disini
   // 'https://website': 'apikey'
+  'https://revita.herokuapp.com': 'APIKEYMU',
   'https://api-xcoders.xyz': 'APIKEYMU',
-  'https://api-erzaa.space': 'APIKEYMU'
+  'https://api-erzaa.space': 'APIKEYMU',
   'https://server-api-rey.herokuapp.com': 'APIKEYMU',
   'https://bx-hunter.herokuapp.com': 'APIKEYMU',
   'https://hardianto-chan.herokuapp.com': 'APIKEYMU',
