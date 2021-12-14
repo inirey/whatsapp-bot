@@ -9,7 +9,7 @@
     "plugins": "plugins"
   },
   "scripts": {
-    "start": "node index.js --self",
+    "start": "node index.js",
     "test": "node test.js"
   },
   "repository": {
@@ -19,7 +19,7 @@
   "keywords": [
     "whatsapp-bot"
   ],
-  "author": "Rey",
+  "author": "fifi",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/inirey/whatsapp-bot/issues"
