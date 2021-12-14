@@ -1,3 +1,4 @@
+// maksud te piye sih Ra paham aku
 let fs = require('fs')
 global.owner = ['6283195138570', '6283195138570'] // nomor kamu disini
 global.mods = [] // Moderator?
@@ -34,11 +35,12 @@ global.APIKeys = { // APIKey nya disini
   'https://cakrayp.herokuapp.com': 'APIKEYMU',
   'https://api.xteam.xyz': 'APIKEYMU',
   'https://zahirr-web.herokuapp.com': 'APIKEYMU',
+  'https://api-fifielmala.herokuapp.com': 'APIKEYMU',
   'https://api.zeks.me': 'APIKEYMU',
 }
 
 // Sticker WM
-global.packname = '© Erza Bot'
+global.packname = '@fifi elmala'
 global.author = 'ig @_sekhaa'
 
 global.wait = '☕ _Tunggu Permintaan kamu sedang di proses..._'
@@ -48,7 +50,7 @@ global.mut = '❌ _Erza di mute silahkan unmute untuk mengaktifkan kembali'
 global.ban = '❌ _Maaf kamu di banned silahkan hubungi owner_'
 global.fla = 'https://hadi-api.herokuapp.com/api/photoxy/smoke-typography?teks='
 
-global.multiplier = 50 // Semakin tinggi, semakin sulit naik level
+global.multiplier = 50 // iki level e jare rehan
 
 let chalk = require('chalk')
 let file = require.resolve(__filename)
