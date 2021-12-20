@@ -21,7 +21,7 @@ global.APIs = { // API Prefix
   zahir: 'https://zahirr-web.herokuapp.com',
   zekais: 'http://zekais-api.herokuapp.com',
   zeks: 'https://api.zeks.me',
-  rns: 'https://api.reysekha.space',
+  rns: 'https://api.sekha.tech',
 }
 global.APIKeys = { // APIKey nya disini
   // 'https://website': 'apikey'
@@ -29,7 +29,7 @@ global.APIKeys = { // APIKey nya disini
   'https://api-xcoders.xyz': 'APIKEYMU',
   'https://api-erzaa.space': 'APIKEYMU',
   'https://server-api-rey.herokuapp.com': 'APIKEYMU',
-  'https://api.reysekha.space': 'APIKEYMU',
+  'https://api.sekha.tech': 'APIKEYMU',
   'https://bx-hunter.herokuapp.com': 'APIKEYMU',
   'https://hardianto-chan.herokuapp.com': 'APIKEYMU',
   'https://neoxr-api.herokuapp.com': 'APIKEYMU',
