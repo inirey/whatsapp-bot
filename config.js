@@ -42,7 +42,7 @@ global.APIKeys = { // APIKey nya disini
 }
 
 // Sticker WM
-global.packname = '@fifi elmala'
+global.packname = 'evita'
 global.author = 'ig @_sekhaa'
 
 global.wait = '☕ _Tunggu Permintaan kamu sedang di proses..._'
@@ -52,7 +52,7 @@ global.mut = '❌ _Erza di mute silahkan unmute untuk mengaktifkan kembali'
 global.ban = '❌ _Maaf kamu di banned silahkan hubungi owner_'
 global.fla = 'https://hadi-api.herokuapp.com/api/photoxy/smoke-typography?teks='
 
-global.multiplier = 50 // iki level e jare rehan
+global.multiplier = 50
 
 let chalk = require('chalk')
 let file = require.resolve(__filename)
