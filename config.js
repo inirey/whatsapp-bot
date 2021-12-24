@@ -1,4 +1,3 @@
-// maksud te piye sih Ra paham aku
 let fs = require('fs')
 global.owner = ['6283195138570', '6283195138570'] // nomor kamu disini
 global.mods = [] // Moderator?
@@ -42,7 +41,7 @@ global.APIKeys = { // APIKey nya disini
 }
 
 // Sticker WM
-global.packname = 'evita'
+global.packname = '© erza bot'
 global.author = 'ig @_sekhaa'
 
 global.wait = '☕ _Tunggu Permintaan kamu sedang di proses..._'
