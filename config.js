@@ -50,7 +50,7 @@ global.eror = '❌ _Maaf Erorr silahkan hubungi owner_'
 global.fot = '© erzabot'
 global.mut = '❌ _Erza di mute silahkan unmute untuk mengaktifkan kembali'
 global.ban = '❌ _Maaf kamu di banned silahkan hubungi owner_'
-global.fla = 'https://hadi-api.herokuapp.com/api/photoxy/smoke-typography?teks='
+global.fla = 'https://api-reysekha.herokuapp.com/api/wallpaper/justina?apikey='
 
 global.multiplier = 50
 
