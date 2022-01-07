@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.siapakahaku[id][0])
         throw false
     }
-    let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/siapakahaku.json')).json()
+    let src = await (await fetch('https://raw.githubusercontent.com/erzacanz/database/master/games/siapakahaku.json')).json()
     let json = src[Math.floor(Math.random() * src.length)]
     let caption = `
 ${json.soal}
@@ -19,10 +19,10 @@ Ketik ${usedPrefix}who untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.siapakahaku[id] = [
-        await conn.sendButton(m.chat, caption, '❤ Erza', 'Bantuan', '.who'),
+        await conn.sendButton(m.chat, caption, '© sekha', 'Bantuan', '.who'),
         json, poin,
         setTimeout(async () => {
-            if (conn.siapakahaku[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, '© stikerin', 'Siapakah Aku', '.siapaaku')
+            if (conn.siapakahaku[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, '© sekha', 'Siapakah Aku', '.siapaaku')
             delete conn.siapakahaku[id]
         }, timeout)
     ]
