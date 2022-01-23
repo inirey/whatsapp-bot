@@ -9,14 +9,10 @@ let handler = async (m, { conn, participants, command, text }) => {
 *Pertanyaan:* ${command} ${text}?
 *Jawaban:* @${who.replace(/@.+/, '')}
     `.trim()
-    let saha = [who]
-    let mentionedJid = saha.concat(m.mentionedJid)
-    conn.reply(m.chat, jawab, m, { contextInfo: { mentionedJid } })
+    conn.reply(m.chat, jawab, m)
 }
 handler.help = ['', 'kah'].map(v => 'siapa' + v + ' <teks>')
 handler.tags = ['kerang']
 handler.command = /^siapa(kah)?$/i
-handler.premium = false
-handler.limit = true
 
 module.exports = handler

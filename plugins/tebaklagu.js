@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 
-let timeout = 120000
-let poin = 500
+let timeout = 60000
+let poin = 127
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tebaklagu = conn.tebaklagu ? conn.tebaklagu : {}
     let id = m.chat
@@ -25,7 +25,7 @@ Bonus: ${poin} XP
         await m.reply(caption),
         json, poin,
         setTimeout(async () => {
-            if (conn.tebaklagu[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.judul}*`, '© stikerin', 'Tebak Lirik', `.tebaklirik`, conn.tebaklagu[id][0])
+            if (conn.tebaklagu[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.judul}*`, '© sekha', 'Tebak Lirik', `.tebaklirik`, conn.tebaklagu[id][0])
             delete conn.tebaklagu[id]
         }, timeout)
     ]
@@ -34,5 +34,6 @@ Bonus: ${poin} XP
 handler.help = ['tebaklagu']
 handler.tags = ['game']
 handler.command = /^tebaklagu$/i
+handler.limit = true
 
 module.exports = handler

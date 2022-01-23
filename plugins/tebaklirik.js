@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
-let timeout = 120000
-let poin = 500
+let timeout = 60000
+let poin = 127
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tebaklirik = conn.tebaklirik ? conn.tebaklirik : {}
     let id = m.chat
@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.tebaklirik[id][0])
         throw false
     }
-    let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')).json()
+    let src = await (await fetch('https://raw.githubusercontent.com/erzacanz/database/master/games/tebaklirik.json')).json()
     let json = src[Math.floor(Math.random() * src.length)]
     let caption = `
 ${json.soal}
@@ -18,10 +18,10 @@ Ketik ${usedPrefix}teli untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.tebaklirik[id] = [
-        await conn.sendButton(m.chat, caption, '© stikerin', 'Bantuan', `.teli`, m),
+        await conn.sendButton(m.chat, caption, '© sekha', 'Bantuan', `.teli`, m),
         json, poin,
         setTimeout(async () => {
-            if (conn.tebaklirik[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, '© stikerin', 'Tebak Lirik', `.tebaklirik`, conn.tebaklirik[id][0])
+            if (conn.tebaklirik[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, '© sekha', 'Tebak Lirik', `.tebaklirik`, conn.tebaklirik[id][0])
             delete conn.tebaklirik[id]
         }, timeout)
     ]
@@ -29,5 +29,6 @@ Bonus: ${poin} XP
 handler.help = ['tebaklirik']
 handler.tags = ['game']
 handler.command = /^tebaklirik/i
+handler.limit = true
 
 module.exports = handler

@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
-let timeout = 120000
-let poin = 500
+let timeout = 60000
+let poin = 127
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tebakkabupaten = conn.tebakkabupaten ? conn.tebakkabupaten : {}
     let id = m.chat
@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.tebakkabupaten[id][0])
         throw false
     }
-    let res = await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakkabupaten.json')
+    let res = await fetch('https://raw.githubusercontent.com/erzacanz/database/master/games/tebakkabupaten.json')
     if (!res.ok) throw eror
     let data = await res.json()
     let json = data[Math.floor(Math.random() * data.length)]
@@ -18,10 +18,10 @@ Ketik ${usedPrefix}tekb untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.tebakkabupaten[id] = [
-        await conn.sendButtonImg(m.chat, await (await fetch(json.url)).buffer(), caption, '© stikerin', 'Bantuan', '.teka', m),
+        await conn.sendButtonImg(m.chat, await (await fetch(json.url)).buffer(), caption, '© sekha', 'Bantuan', '.teka', m),
         json, poin,
         setTimeout(async () => {
-            if (conn.tebakkabupaten[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.title}*`, '© stikerin', 'Tebak Kabupaten', '.tebakkabupaten', conn.tebakkabupaten[id][0])
+            if (conn.tebakkabupaten[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.title}*`, '© sekha', 'Tebak Kabupaten', '.tebakkabupaten', conn.tebakkabupaten[id][0])
             delete conn.tebakkabupaten[id]
         }, timeout)
     ]
@@ -29,5 +29,6 @@ Bonus: ${poin} XP
 handler.help = ['tebakkabupaten']
 handler.tags = ['game']
 handler.command = /^tebakkabupaten/i
+handler.limit = true
 
 module.exports = handler
