@@ -1,42 +1,41 @@
+let levelling = require('../lib/levelling')
+let fetch = require('node-fetch')
+
 let handler = m => m
 
-let levelling = require('../lib/levelling')
-const canvacord = require('canvacord')
 handler.before = async function (m) {
-        let user = global.db.data.users[m.sender]
-        let users = Object.entries(global.db.data.users).map(([key, value]) => {
+        let user = db.data.users[m.sender]
+        let users = Object.entries(db.data.users).map(([key, value]) => {
                 return { ...value, jid: key }
         })
         let pp = './src/avatar_contact.png'
         let who = m.sender
-        let discriminator = who.substring(9, 13)
+        let discriminator = who
         let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
         let usersLevel = sortedLevel.map(enumGetKey)
         let { min, xp, max } = levelling.xpRange(user.level, global.multiplier)
         try {
                 pp = await this.getProfilePicture(who)
         } catch (e) {
-
         } finally {
 
                 if (!user.autolevelup) return !0
                 let before = user.level * 1
                 while (levelling.canLevelUp(user.level, user.exp, global.multiplier)) user.level++
 
+                let url = API('amel', '/rank', {
+                        rank: usersLevel.indexOf(m.sender) + 1,
+                        pp,
+                        level: user.level,
+                        currentxp: user.exp - min,
+                        needxp: xp,
+                        name: this.getName(who),
+                        discriminator
+                }, 'apikey')
+                let res = await fetch(url)
                 if (before !== user.level) {
-                        let rank = await new canvacord.Rank()
-                                .setRank(usersLevel.indexOf(m.sender) + 1)
-                                .setAvatar(pp)
-                                .setLevel(user.level)
-                                .setCurrentXP(user.exp - min)
-                                .setRequiredXP(xp)
-                                .setProgressBar("#f2aa4c", "COLOR")
-                                .setUsername(this.getName(who))
-                                .setDiscriminator(discriminator);
-                        rank.build()
-                                .then(async data => {
-                                        await this.sendButtonImg(m.chat, data, `*Level Up!*\n\n_${before}_ >_${user.level}_`.trim(), '❤ Erzaa', 'Daily', ',daily')
-                                })
+                        if (!res.ok) return this.sendButton(m.chat, `*Naik Level!*\n*${before}* ➞ *${user.level}*`, '© sekha', 'Ambil XP Harian', ',daily', m)
+                        await this.sendButtonImg(m.chat, url, `*Naik Level!*\n*${before}* ➞ *${user.level}*`, '© sekha', 'Ambil XP Harian', ',daily', m)
                 }
         }
 }

@@ -1,17 +1,12 @@
-let fetch = require("node-fetch")
-let arr = []
 let handler = async (m, { conn }) => {
-  let res = await fetch('http://sansekai.my.id/sansekai.txt')
-  if (!res.ok) throw `${res.status} ${res.statusText}`
-let txt = await res.text()
-arr = txt.split`\n`
-  let asupan = arr[Math.floor(Math.random() * arr.length)]
-  await conn.sendFile(m.chat, 'http://sansekai.my.id/ptl_repost/'+asupan, asupan, null, m)
+  await m.reply(wait)
+  let res = `https://api.zacros.my.id/asupan/random`
+  await conn.sendFile(m.chat, res, '', `monggo cok`, m)
 }
+
 handler.help = ['asupan']
 handler.tags = ['fun']
 handler.command = /^(asupan)$/i
-handler.premium = true
 handler.limit = true
 
 module.exports = handler

@@ -1,6 +1,5 @@
+const { sticker5 } = require('../lib/sticker')
 const fetch = require('node-fetch')
-const { sticker } = require('../lib/sticker')
-const { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text, command }) => {
   let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
@@ -15,10 +14,8 @@ let handler = async (m, { conn, text, command }) => {
     let url = await fetch(global.API('https://salism3api.pythonanywhere.com', '/text2gif/', { text: teks }))
     if (!url.ok) throw eror
     res = await url.json()
-    let stiker = await sticker(null, res.image, global.packname, global.author)
-    if (stiker) return await conn.sendMessage(m.chat, stiker, MessageType.sticker, {
-      quoted: m
-    })
+    let stiker = await sticker5(null, res.image, global.packname, global.author)
+    if (stiker) return await conn.sendFile(m.chat, stiker, '', '', m, 0, { asSticker: true })
     throw stiker.toString()
   }
 }
@@ -26,7 +23,6 @@ handler.help = new Array(2).fill('attp').map((v, i) => v + (i + 1) + ' <teks>')
 handler.tags = ['sticker']
 
 handler.command = /^attp[1-2]?$/i
-handler.premium = false
 handler.limit = true
 
 module.exports = handler

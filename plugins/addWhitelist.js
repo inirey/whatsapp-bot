@@ -1,5 +1,5 @@
 let handler = async (m, { usedPrefix, command, text, args }) => {
-    if (!args || !['add', 'remove'].includes(args[0].toLowerCase())) throw `
+    if (!args || !['+', 'add', '-', 'remove'].includes(args[0].toLowerCase())) throw `
 *Penggunaan:* ${usedPrefix + command} <add|remove> nomor,nomor,...,nomor
 *Contoh:*
 ${usedPrefix + command} add 6281111111111,12345678901,0
@@ -18,6 +18,7 @@ ${usedPrefix + command} remove 6281111111111,12345678901,0
 handler.help = ['whitelist'].map(v => v + ' nomor,nomor')
 handler.tags = ['owner']
 handler.command = ['whitelist']
+
 handler.owner = true
 
 module.exports = handler

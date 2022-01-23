@@ -1,12 +1,10 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { args, usedPrefix, command }) => {
+    let ar = ['latinkejawa', 'latinkesunda', 'jawakelatin', 'sundakelatin']
     let er = `
-┌〔 Pilihan 〕
-├ latinkejawa
-├ latinkesunda
-├ jawakelatin
-├ sundakelatin
+┌「 Pilihan 」
+${ar.map(v => '├ ' + v).join`\n`}
 └────
 
 contoh:
@@ -36,6 +34,5 @@ handler.tags = ['tools']
 handler.command = /^aksara$/i
 
 handler.limit = true
-handler.premium = true
 
 module.exports = handler

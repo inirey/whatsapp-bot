@@ -1,22 +1,20 @@
 let fetch = require('node-fetch')
+
 let handler = m => m
 
 handler.before = async (m) => {
-    let chat = global.db.data.chats[m.chat]
-    if (chat.simi && !chat.isBanned && !m.isGroup) {
-        if (/^.*false|disnable|(turn)?off|0/i.test(m.text)) return
+    let chat = db.data.chats[m.chat]
+    if (chat.simi && !chat.isBanned) {
+        if (/^.*false|disable|(turn)?off|0/i.test(m.text)) return
         if (!m.text) return
-        let res = await fetch(global.API('rey', '/api/fun/simisimi-ind2', { text: encodeURIComponent(m.text) }, 'apikey'))
+        let res = await fetch(API('https://api.simsimi.net', '/v2/', { text: encodeURIComponent(m.text), lc: 'id' }))
         if (!res.ok) return m.reply(eror)
         let json = await res.json()
-        if (json.result == 'Aku tidak mengerti apa yang kamu katakan.Tolong ajari aku.') await m.reply('siminya blom diajarin, ajarin di https://simsimi.com/teach')
-        else await m.reply(`${json.result.success}`)
+        if (json.success == "Aku tidak mengerti apa yang kamu katakan.Tolong ajari aku.") return m.reply('lu ngomong apa')
+        m.reply(json.success)
         return !0
     }
-    return true
+    return !0
 }
-handler.premium = false
-handler.limit = false
-handler.group = true
-handler.private = false
+
 module.exports = handler

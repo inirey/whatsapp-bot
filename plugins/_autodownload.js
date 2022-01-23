@@ -13,7 +13,7 @@ handler.all = async function (m, { isPrems }) {
 
     let url = m.text.split(/\n| /i)[0]
 
-    if (/^.*tiktok/i.test(m.text)) {
+    if (/^.*vt.tiktok/i.test(m.text)) {
         let res = await fetch(API('rey', '/api/download/tiktok', { url }, 'apikey'))
         if (!res.ok) return m.reply(eror)
         let json = await res.json()
@@ -21,7 +21,7 @@ handler.all = async function (m, { isPrems }) {
         // m.reply(util.format(json))
         await this.sendFile(m.chat, json.result.nowatermark, '', 'With Watermark', m)
         await this.sendFile(m.chat, json.result.nowatermark, '', 'No Watermark', m)
-        await conn.sendFile(m.chat, json.result.audio, 'eror.mp3', '', m, 1, { mimetype: 'audio/mp4' })
+        //await this.sendFile(m.chat, json.result.audio, 'eror.mp3', '', m, 1, { mimetype: 'audio/mp4' })
     }
 
     if (/^.*cocofun/i.test(m.text)) {
@@ -30,16 +30,16 @@ handler.all = async function (m, { isPrems }) {
         let json = await res.json()
         await m.reply(wait)
         // m.reply(util.format(json))
-        await this.sendFile(m.chat, json.download, '', '❤ Erzaa', m)
+        await this.sendFile(m.chat, json.download, '', 'sukes ✓', m)
     }
 
     if (/^.*(fb.watch|facebook.com)/i.test(m.text)) {
-        let res = await fetch(API('fxc7', '/api/download/fb', { url }, 'apikey'))
+        let res = await fetch(API('xteam', '/dl/fbv2', { url }, 'APIKEY'))
         if (!res.ok) return m.reply(eror)
         let json = await res.json()
         await m.reply(wait)
         // m.reply(util.format(json))
-        await this.sendFile(m.chat, json.data.url, '', '❤ Erzaa', m)
+        await conn.sendFile(m.chat, json.result.hd.url, '', 'sukes ✓', m)
     }
 
     if (/^.*instagram.com\/(p|reel|tv)/i.test(m.text)) {
@@ -48,7 +48,7 @@ handler.all = async function (m, { isPrems }) {
         let json = await res.json()
         await m.reply(wait)
         // m.reply(util.format(json))
-        await this.sendFile(m.chat, json.result.url, '', '❤ Erzaa', m)
+        await this.sendFile(m.chat, json.result.url, '', 'sukes ✓', m)
     }
 
     if (/^.*(pinterest.com\/pin|pin.it)/i.test(m.text)) {
@@ -58,7 +58,7 @@ handler.all = async function (m, { isPrems }) {
             if (!json.status) return m.reply(eror)
             await m.reply(wait)
             m.reply(util.format(json))
-            await this.sendFile(m.chat, json.data.url, '', '❤ Erzaa', m)
+            await this.sendFile(m.chat, json.data.url, '', 'sukes ✓', m)
         }).catch(_ => _)
     }
 
@@ -69,7 +69,7 @@ handler.all = async function (m, { isPrems }) {
             let pesan = json.data.map((v) => `Link: ${v.url}`).join('\n------------\n')
             await m.reply(wait)
             for (let { url } of json.data) {
-                this.sendFile(m.chat, url, 'ig' + (/mp4/i.test(url) ? '.mp4' : '.jpg'), '❤ Erzaa', m)
+                this.sendFile(m.chat, url, 'ig' + (/mp4/i.test(url) ? '.mp4' : '.jpg'), 'sukes ✓', m)
             }
         }).catch(_ => _)
     }
