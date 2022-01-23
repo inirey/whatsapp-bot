@@ -1,60 +1,61 @@
 let fs = require('fs')
-global.owner = ['6283195138570', '6283195138570'] // nomor kamu disini
-global.mods = [] // Moderator?
-global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna premium tidak memerlukan limit
+let chalk = require('chalk')
+
+global.owner = ['6281284760551', '6281284760551'] // Letakan nomor kamu disini
+
 global.APIs = { // API Prefix
   // nama: 'https://website'
   bx: 'https://bx-hunter.herokuapp.com',
-  rev: 'https://revita.herokuapp.com',
   rey: 'https://server-api-rey.herokuapp.com',
   dhnjing: 'https://dhnjing.xyz',
-  hardianto: 'https://hardianto-chan.herokuapp.com',
+  hardianto: 'https://hardianto.xyz',
   jonaz: 'https://jonaz-api-v2.herokuapp.com',
   neoxr: 'https://api.neoxr.eu.org',
   nrtm: 'https://nurutomo.herokuapp.com',
   pencarikode: 'https://api.chipa.xyz',
   xteam: 'https://api.xteam.xyz',
   fxc7: 'https://api-xcoders.xyz',
-  erza: 'https://api.erzaa.space',
+  waifupics: 'https://api.waifu.pics',
+  sekha: 'https://api.sekha.tech',
   cakra: 'https://cakrayp.herokuapp.com',
   zahir: 'https://zahirr-web.herokuapp.com',
   zekais: 'http://zekais-api.herokuapp.com',
   zeks: 'https://api.zeks.me',
-  rnsxyz: 'https://api.reysekha.xyz',
-  rns: 'https://api.sekha.tech',
 }
 global.APIKeys = { // APIKey nya disini
   // 'https://website': 'apikey'
-  'https://revita.herokuapp.com': 'APIKEYMU',
-  'https://api-xcoders.xyz': 'APIKEYMU',
-  'https://api-erzaa.space': 'APIKEYMU',
-  'https://server-api-rey.herokuapp.com': 'APIKEYMU',
-  'https://api.sekha.tech': 'APIKEYMU',
-  'https://bx-hunter.herokuapp.com': 'APIKEYMU',
-  'https://hardianto-chan.herokuapp.com': 'APIKEYMU',
-  'https://neoxr-api.herokuapp.com': 'APIKEYMU',
-  'https://api.chipa.xyz': 'APIKEYMU',
-  'https://cakrayp.herokuapp.com': 'APIKEYMU',
-  'https://api.xteam.xyz': 'APIKEYMU',
-  'https://zahirr-web.herokuapp.com': 'APIKEYMU',
-  'https://api-fifielmala.herokuapp.com': 'APIKEYMU',
-  'https://api.zeks.me': 'APIKEYMU',
+  'https://api-xcoders.xyz': 'APIKEY',
+  'https://api.sekha.tech': 'APIKEY',
+  'https://server-api-rey.herokuapp.com': 'APIKEY',
+  'https://bx-hunter.herokuapp.com': 'APIKEY',
+  'https://hardianto.xyz': 'APIKEY',
+  'https://api.neoxr.eu.org': 'APIKEY',
+  'https://api.chipa.xyz': 'APIKEY',
+  'https://cakrayp.herokuapp.com': 'APIKEY',
+  'https://api.xteam.xyz': 'APIKEY',
+  'https://zahirr-web.herokuapp.com': 'APIKEY',
+  'https://api.zeks.me': 'APIKEY',
 }
+
 
 // Sticker WM
 global.packname = '© erza bot'
 global.author = 'ig @_sekhaa'
 
-global.wait = '☕ _Tunggu Permintaan kamu sedang di proses..._'
-global.eror = '❌ _Maaf Erorr silahkan hubungi owner_'
-global.fot = '© erzabot'
-global.mut = '❌ _Erza di mute silahkan unmute untuk mengaktifkan kembali'
-global.ban = '❌ _Maaf kamu di banned silahkan hubungi owner_'
-global.fla = 'https://hadi-api.herokuapp.com/api/photoxy/smoke-typography?teks='
+global.wm = '© reysekha'
+global.wait = '⏳ tunggu permintaan kamu sedang di proses...'
+global.eror = '× Upss Erorr silahkan lapor owner'
+global.benar = '✓'
+global.salah = '×'
+global.dikit = 'hampir benar'
+global.footer = '© sekha'
+global.reyganz= 'https://api-reysekha.herokuapp.com/api/wallpaper/justina?apikey='
+global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text='
+//global.CanvasAPI = '';
+//global.fla = 'https://api-reysekha.herokuapp.com/api/wallpaper/justina?apikey='
 
-global.multiplier = 50
+global.multiplier = 150 // Semakin tinggi, semakin sulit naik level
 
-let chalk = require('chalk')
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
   fs.unwatchFile(file)

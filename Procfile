@@ -1,1 +1,1 @@
-worker: npm i && npm update && node . --public
+worker: node . --public
