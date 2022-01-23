@@ -1,8 +1,8 @@
 {
-  "name": "stikerinbot",
-  "description": "Lightweight WhatsApp Bot",
-  "repository": "https://github.com/ariffb25/stikerinbot",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "name": "erzabot",
+  "description": "WhatsApp Bot",
+  "repository": "https://github.com/inirey/whatsapp-bot",
+  "logo": "https://api.sekha.tech/logo.png",
   "keywords": [
     "bot",
     "whatsapp",
