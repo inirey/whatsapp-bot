@@ -12,12 +12,12 @@ handler.before = async function (m) {
       global.db.data.users[m.sender].exp += math.bonus
       clearTimeout(this.math[id][3])
       delete this.math[id]
-      await this.sendButton(m.chat, `*Benar!* +${math.bonus} XP`, '❤ Erzaa', `${math.mode.toUpperCase()}`, `.math ${math.mode}`, m)
+      await this.sendButton(m.chat, `*Benar!* +${math.bonus} XP`, '© sekha', `${math.mode.toUpperCase()}`, `.math ${math.mode}`, m)
     } else {
       if (--this.math[id][2] == 0) {
         clearTimeout(this.math[id][3])
         delete this.math[id]
-        await this.sendButton(m.chat, `*Kesempatan habis!*\nJawaban: *${math.result}*`, '❤ Erzaa', `${math.mode.toUpperCase()}`, `.math ${math.mode}`)
+        await this.sendButton(m.chat, `*Kesempatan habis!*\nJawaban: *${math.result}*`, '© sekha', `${math.mode.toUpperCase()}`, `.math ${math.mode}`)
       } else m.reply(`*Jawaban Salah!*\nMasih ada ${this.math[id][2]} kesempatan`)
     }
   } catch (e) { return }

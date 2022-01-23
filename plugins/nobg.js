@@ -1,7 +1,6 @@
 const axios = require("axios");
 
 let handler = async (m, { conn, usedPrefix, command }) => {
-  await m.reply(wait)
   let q = m.quoted ? m.quoted : m;
   let mime = (q.msg || q).mimetype || "";
   if (/image/.test(mime)) {
@@ -14,7 +13,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         image: imgbase64,
       }
     );
-    await conn.sendFile(m.chat, data.data.image, "", "dah jadi", m, false);
+    await conn.sendFile(m.chat, data.data.image, "", "anjay", m, false);
   } else throw `balas foto dengan perintah ${usedPrefix + command}`;
 };
 handler.help = ["removebg", "nobg"];

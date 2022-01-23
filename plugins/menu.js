@@ -5,64 +5,58 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 let tags = {
-    'game': 'G A M E  M E N U',
-    'xp': 'E X P  M E N U',
-    'nsfw': 'N S F W  M E N U',
-    'random': 'R A N D O M  I M A G E',
-    'sticker': 'S T I C K E R',
-    'wallhp': 'W A L L P A P E R',
-    'kerang': 'K E R A N G  M E N U',
-    'quotes': 'T E X T  M E N U',
-    'group': 'G R O U P  M E N U',
-    'internet': 'S E A R C H I N G',
-    'nulis': 'M A K E R  M E N U',
-    'downloader': 'D O W N L O A D',
-    'tools': 'T O O L S  M E N U',
-    'fun': 'F U N  M E N U',
-    'database': 'D A T A B A S E',
-    'vote': 'V O T E  M E N U',
-    'absen': 'A B S E N S I',
-    'quran': 'I S L A M I C',
-    'audio': 'V O I C E  M E N U',
-    'info': 'I N F O  M E N U',
-}
+    'game': '🔖 _*G A M E*_ 🔖',
+    'xp': '🔖 _*E X P & L I M I T*_ 🔖',
+    'sticker': '🔖 _*S T I C K E R*_ 🔖',
+    'kerang': '🔖 _*K E R A N G*_  🔖',
+    'random': '🔖 _*R A N D O M  A N I M E*_ 🔖',
+    'quotes': '🔖 _*Q U O T E S*_ 🔖',
+    'admin': '🔖 _*A D M I N*_ 🔖',
+    'group': '🔖 _*G R O U P*_ 🔖',
+    'internet': '🔖 _*I N T E R N E T*_ 🔖',
+    'anonymous': '🔖 _*A N O N C H A T*_ 🔖',
+    'nulis': '🔖 _*M A K E R*_ 🔖',
+    'downloader': '🔖 _*D O W N L O A D E R*_ 🔖',
+    'tools': '🔖 _*T O O L S*_ 🔖',
+    'fun': '🔖 _*F U N*_ 🔖',
+    'database': '🔖 _*D A T A B A S E*_ 🔖',
+    'vote': '🔖 _*V O T I N G*_ 🔖',
+    'absen': '🔖 _*A B S E N*_ 🔖',
+    'quran': '🔖 _*I S L A M I*_ 🔖',
+    'audio': '🔖 _*S O U N D*_ 🔖',
+    'info': '🔖 _*I N F O R M A T I O N*_ 🔖',
+  }
 
 const defaultMenu = {
   before: `
+*HAI %name!* 👋 *Welcome have a nice day* ✨
 
-Hai, %name! 👋 Welcome have a nice day ✨
+  🔖 _*U S E R S*_ 🔖
 
-    *I N F O  U S E R S*
-
-• *NAME:* %name
-• *LIMIT:* %limit
-• *ROLE:* %role
-• *LEVEL:* %level %exp / %maxexp
-• *XP:* %totalexp
-
-
-    *E R Z A  I N F O*
-
-• *DATE:* %week %date
-• *DATE ISLAMI*: %dateIslamic
-• *TIME:* %time
-• *RUNTIME:* %uptime
-• *USERS:* %rtotalreg
-• *WEB:* https://erza-info.ml
+🔖 _NAME: %name_
+🔖 _LIMIT: %limit_
+🔖 _ROLE: %role_
+🔖 _LEVEL: %level / %maxexp_
+🔖 _XP:  %exp / %totalexp_
 
 
-    *O W N E R  I N F O*
+   🔖 _*E R Z A  I N F O*_ 🔖
 
-• *OWNER:* Rey Sekha
-• *GITHUB:* https://github.com/inirey
-• *WEB:* https://reysekha-web.eu.org
-• *INSTAGRAM:* https://instagram.com/_sekhaa
+🔖 _DATE: %week %date_
+🔖 _ISLAMI: %dateIslamic_
+🔖 _TIME: %time_
+🔖 _RUNTIME: %uptime_
+🔖 _USERS: %rtotalreg_
+🔖 _WEB: https://erzaa.site_
+🔖 _Api: https://api.sekha.tech_
+🔖 _Owner: https://github.com/inirey_
+
 
 _-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 %readmore`.trimStart(),
-  header: '*%category*\n\n',
-  body: '• %cmd',
+  header: '%category\n\n',
+  body: '🔖 _%cmd_',
   footer: '\n',
   after: `
 *%npmname*
@@ -120,7 +114,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         premium: plugin.premium,
         enabled: !plugin.disabled,
       }
-    })
+     })
     let groups = {}
     for (let tag in tags) {
       groups[tag] = []
@@ -135,7 +129,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     let header = conn.menu.header || defaultMenu.header
     let body = conn.menu.body || defaultMenu.body
     let footer = conn.menu.footer || defaultMenu.footer
-    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Powered by https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
+    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Dipersembahkan oleh https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
     let _text = [
       before,
       ...Object.keys(tags).map(tag => {
@@ -170,9 +164,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + 'welcome')).buffer(), text.trim(), 'Customize By Rey ❤️', 'Owner', `${_p}owner`, 'Donasi', `${_p}donasi`, m)
-    //await conn.sendButtonLoc(m.chat, text,trim(), await (await fetch(fla + 'menu')).buffer(),
-    //await conn.send2Button(m.chat, text.trim(), 'made with ❤️ by Sekha', 'Owner', `${_p}owner`, 'Donasi', `${_p}donasi`, m)
+    await conn.send3ButtonLoc(m.chat, await (await fetch(reyganz + 'APIKEY')).buffer(), text.trim(), '© by sekha', 'Owner Bot', `,owner`, 'Group Wa', `,wanodejs`, 'Donasi owner', `,donasi`, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
