@@ -1,10 +1,10 @@
-console.log('Memulai...')
+console.log('STARTING....')
 let { spawn } = require('child_process')
 let path = require('path')
 let fs = require('fs')
 let package = require('./package.json')
 const CFonts = require('cfonts')
-CFonts.say('Stikerin Bot', {
+CFonts.say('Erza Bot', {
   colors: ['#f2aa4c'],
   font: 'block',
   align: 'center',
