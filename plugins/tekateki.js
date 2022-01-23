@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
-let timeout = 120000
-let poin = 500
+let timeout = 60000
+let poin = 127
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tekateki = conn.tekateki ? conn.tekateki : {}
     let id = m.chat
@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.tekateki[id][0])
         throw false
     }
-    let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/tekateki.json')).json()
+    let src = await (await fetch('https://raw.githubusercontent.com/erzacanz/database/master/games/tekateki.json')).json()
     let json = src[Math.floor(Math.random() * src.length)]
     let caption = `
 ${json.soal}
@@ -18,10 +18,10 @@ Ketik ${usedPrefix}tete untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.tekateki[id] = [
-        await conn.send2Button(m.chat, caption, '© stikerin', 'Bantuan', `.tete`, m),
+        await conn.send2Button(m.chat, caption, '© sekha', 'Bantuan', `.tete`, m),
         json, poin,
         setTimeout(async () => {
-            if (conn.tekateki[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, '© stikerin', 'Teka Teki', `.tekateki`, conn.tekateki[id][0])
+            if (conn.tekateki[id]) await conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, '© sekha', 'Teka Teki', `.tekateki`, conn.tekateki[id][0])
             delete conn.tekateki[id]
         }, timeout)
     ]
@@ -29,5 +29,6 @@ Bonus: ${poin} XP
 handler.help = ['tekateki']
 handler.tags = ['game']
 handler.command = /^tekateki/i
+handler.limit = true
 
 module.exports = handler
