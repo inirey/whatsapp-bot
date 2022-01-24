@@ -1,5 +1,8 @@
 <p align="center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm_viVue7cigCbzc_puEEqJzzzImgaIyviKg&usqp=CAU" width="128" height="128"/>
 </p>
+<p align="center">
+<a href="#"><img title="Erza-Bot" src="https://img.shields.io/badge/Erza Bot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+</p>
 <!-- <img src="https://raw.githubusercontent.com/MRHRTZ/DGC-ChatBotV3/main/media/img/dgc.jpg" width="128" height="128"/> -->
 <p align="center">
 <a href="//github.com/inirey"><img src="https://img.shields.io/badge/Author-Rey-red.svg?style=for-the-badge&logo=github"/><a/>
