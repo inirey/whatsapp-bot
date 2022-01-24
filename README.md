@@ -10,6 +10,10 @@
 <p align="center">
 <a href="https://javascript.com"><img src="https://img.shields.io/badge/Made%20With-javascript-cyan.svg?style=for-the-badge&logo=javascript"/><a/>
 </p>
+</p>
+<p align="center">
+<a href="https://www.codefactor.io/repository/github/inirey/whatsapp-bot/overview/master"><img title="Rating" src="https://www.codefactor.io/repository/github/inirey/whatsapp-bot/badge/master"></a>
+</p>
 <p align="center">
 <a href="https://github.com/inirey/whatsapp-bot/network/members"><img title="Forks" src="https://img.shields.io/github/forks/inirey/whatsapp-bot?color=red&style=flat-square"></a>
 <a href="https://github.com/inirey/whatsapp-bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/inirey/whatsapp-bot?label=Watchers&color=blue&style=flat-square"></a>
