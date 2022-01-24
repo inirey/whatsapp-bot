@@ -9,8 +9,8 @@
     "plugins": "plugins"
   },
   "scripts": {
-    "start": "node index.js",
-    "test": "node test.js"
+    "start": "node .",
+    "test": "node test"
   },
   "repository": {
     "type": "git",
