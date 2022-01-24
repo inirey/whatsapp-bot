@@ -2,6 +2,10 @@
 </p>
 <!-- <img src="https://raw.githubusercontent.com/MRHRTZ/DGC-ChatBotV3/main/media/img/dgc.jpg" width="128" height="128"/> -->
 <p align="center">
+</p>
+<p align="center">
+<a href="#"><img title="Erza-Bot" src="https://img.shields.io/badge/Erza Bot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+</p>
 <a href="//github.com/inirey"><img src="https://img.shields.io/badge/Author-Rey-red.svg?style=for-the-badge&logo=github"/><a/>
 </p>
 <p align="center">
