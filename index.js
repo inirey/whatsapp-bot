@@ -4,13 +4,13 @@ let path = require('path')
 let fs = require('fs')
 let package = require('./package.json')
 const CFonts = require('cfonts')
-CFonts.say('Erza Bot', {
-  colors: ['#f2aa4c'],
+CFonts.say('ERZA', {
+  colors: ['#00FFFF'],
   font: 'block',
   align: 'center',
 })
 CFonts.say(`'${package.name}' Oleh @${package.author.name || package.author}`, {
-  colors: ['#f2aa4c'],
+  colors: ['#00FFFF'],
   font: 'console',
   align: 'center',
 })
@@ -25,7 +25,7 @@ function start(file) {
   isRunning = true
   let args = [path.join(__dirname, file), ...process.argv.slice(2)]
   CFonts.say([process.argv[0], ...args].join(' '), {
-    colors: ['#f2aa4c'],
+    colors: ['#00FFFF'],
     font: 'console',
     align: 'center',
   })
@@ -33,7 +33,7 @@ function start(file) {
     stdio: ['inherit', 'inherit', 'inherit', 'ipc']
   })
   p.on('message', data => {
-    console.log('[RECEIVED]', data)
+    console.log('SEKHA', data)
     switch (data) {
       case 'reset':
         p.kill()
