@@ -2,7 +2,6 @@
 </p>
 <!-- <img src="https://raw.githubusercontent.com/MRHRTZ/DGC-ChatBotV3/main/media/img/dgc.jpg" width="128" height="128"/> -->
 <p align="center">
-</p>
 <a href="//github.com/inirey"><img src="https://img.shields.io/badge/Author-Rey-red.svg?style=for-the-badge&logo=github"/><a/>
 </p>
 <p align="center">
