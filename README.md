@@ -18,8 +18,7 @@
 </p>
 <div align="center">
 <details>
- <summary>Erza Rest API's</summary>
- [Website](https://api.erzaa.site)
+ <summary>Erza Rest API's</summary>https://api.erzaa.site
 
 ## DEPLOY HEROKUAPP
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/inirey/whatsapp-bot/)
