@@ -57,4 +57,4 @@ function start(file) {
   // console.log(p)
 }
 
-start('MsgHandler.js')
+start('main.js')
