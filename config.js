@@ -8,6 +8,7 @@ global.APIs = { // API Prefix
   bx: 'https://bx-hunter.herokuapp.com',
   rey: 'https://server-api-rey.herokuapp.com',
   dhnjing: 'https://dhnjing.xyz',
+  jawasoft: 'https://api.jawasoft.xyz',
   hardianto: 'https://hardianto.xyz',
   jonaz: 'https://jonaz-api-v2.herokuapp.com',
   neoxr: 'https://api.neoxr.eu.org',
@@ -25,6 +26,7 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey nya disini
   // 'https://website': 'apikey'
   'https://api-xcoders.xyz': 'APIKEY',
+  'htttps://api.jawasoft.xyz': 'APIKEY',
   'https://api.sekha.tech': 'APIKEY',
   'https://server-api-rey.herokuapp.com': 'APIKEY',
   'https://bx-hunter.herokuapp.com': 'APIKEY',
