@@ -1,71 +1,60 @@
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-    let fa = `
-Pengunaan:
-${usedPrefix + command} <angka>
-
-Contoh:
-${usedPrefix + command} 100
-
-artinya kamu bertaruh 100 XP.
-
-*JACKPOT:* taruhan kamu digandakan
-*Kurang beruntung:* +1 XP
-*Kalah:* taruhan kamu diambil`.trim()
-    if (!args[0] || isNaN(args[0])) throw fa
-    let taruhan = parseInt(args[0])
-    let users = global.db.data.users[m.sender]
-    let time = users.lastslot + 10000
-    if (new Date - users.lastslot < 10000) throw `tunggu selama ${conn.msToTime(time - new Date())}`
-    if (taruhan < 1) throw 'Minimal 1 XP!'
-    if (users.exp < taruhan) {
-        throw `XP kamu tidak cukup!`
-    }
-
-    let emojis = ["🏆️", "🥇", "💵"]
-    let a = Math.floor(Math.random() * emojis.length)
-    let b = Math.floor(Math.random() * emojis.length)
-    let c = Math.floor(Math.random() * emojis.length)
+let { MessageType } = require('@adiwajshing/baileys')
+let num = /([0-9])$/i
+let handler = async (m, { conn, text }) => {
+    if (!text) throw 'Masukkan Jumlah XP Yang Ingin Anda Slot'
+    if (!num.test(text)) throw 'Hanya Angka'
+    let exp = text * 1
+    let jackpot = Math.ceil(exp * 5)
+    let win = Math.ceil(exp * 2)
+    if (exp < 5) throw 'Minimal 5'
+    let users = global.db.data.users
+    if (exp > users[m.sender].exp) throw 'XP Anda Tidak Cukup'
+    let emojis = ["🍏","🍎","🍊","🍋","🍑","🪙","🍅","🍐","🍒","🥥","🍌"];
+    let a = Math.floor(Math.random() * emojis.length);
+    let b = Math.floor(Math.random() * emojis.length);
+    let c = Math.floor(Math.random() * emojis.length);
     let x = [],
         y = [],
-        z = []
+        z = [];
     for (let i = 0; i < 3; i++) {
-        x[i] = emojis[a]
-        a++
-        if (a == emojis.length) a = 0
+        x[i] = emojis[a];
+        a++;
+        if (a == emojis.length) a = 0;
     }
     for (let i = 0; i < 3; i++) {
-        y[i] = emojis[b]
-        b++
-        if (b == emojis.length) b = 0
+        y[i] = emojis[b];
+        b++;
+        if (b == emojis.length) b = 0;
     }
     for (let i = 0; i < 3; i++) {
-        z[i] = emojis[c]
-        c++
-        if (c == emojis.length) c = 0
+        z[i] = emojis[c];
+        c++;
+        if (c == emojis.length) c = 0;
     }
-    let end
+    let end;
     if (a == b && b == c) {
-        end = `JACKPOT! 🥳 *+${taruhan + taruhan} XP*`
-        users.exp += taruhan
+        end = "_*JACKPOT*_";
+        hasil = `Win With 3 Thing Common +${jackpot} XP`;
+        gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${x[1]} | ${y[1]} | ${z[1]} <=== ${end}\n${x[2]} | ${y[2]} | ${z[2]}`;
+        global.db.data.users[m.sender].exp += jackpot
+        await conn.fakeReply(m.chat, `*[ 🎰 VIRTUAL SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 VIRTUAL SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
+
     } else if (a == b || a == c || b == c) {
-        end = `Kurang beruntung 👍 *+1 XP*`
-        users.exp += 1
+        end = "_*YOU WIN*_";
+        hasil = `Win With 2 Things Common +${win} XP`;
+        gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${x[1]} | ${y[1]} | ${z[1]} <=== ${end}\n${x[2]} | ${y[2]} | ${z[2]}`;
+        global.db.data.users[m.sender].exp += win
+        await conn.fakeReply(m.chat, `*[ 🎰 VIRTUAL SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 VIRTUAL SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
     } else {
-        end = `Kamu kalah 😥 *-${taruhan} XP*`
-        users.exp -= taruhan
+        end = "_*YOU LOSE*_";
+        hasil = `Hopefully You Are Lucky Next -${exp} XP`;
+        gcha = `${x[0]} | ${y[0]} | ${z[0]}\n${x[1]} | ${y[1]} | ${z[1]} <=== ${end}\n${x[2]} | ${y[2]} | ${z[2]}`;
+        global.db.data.users[m.sender].exp -= exp
+        await conn.fakeReply(m.chat, `*[ 🎰 VIRTUAL SLOT 🎰 ]*\n\n${gcha}\n\n*[ 🎰 VIRTUAL SLOT 🎰 ]*`, '0@s.whatsapp.net', `${hasil}`, 'status@broadcast')
     }
-    users.lastslot = new Date * 1
-    return conn.sendButton(m.chat,
-        `*[ 🎰 | SLOTS ]*
-
-${end}
-
-${x[0]} ${y[0]} ${z[0]}
-${x[1]} ${y[1]} ${z[1]}
-${x[2]} ${y[2]} ${z[2]}`.trim(), '© sekha', `Slot ${args[0]}`, `.slot ${args[0]}`, m)
 }
 handler.help = ['slot <angka>']
 handler.tags = ['game']
-handler.command = /^(slots?)$/i
+handler.command = /^(slot)$/i
 
-module.exports = handler 
+module.exports = handler
