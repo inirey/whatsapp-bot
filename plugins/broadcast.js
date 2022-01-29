@@ -5,7 +5,7 @@ let handler = async (m, { conn, text }) => {
   conn.reply(m.chat, `Mengirim pesan broadcast ke ${chats.length} chat\nEstimasi selesai ${chats.length * 1.5} detik`, m)
   for (let id of chats) {
     await conn.delay(1500)
-    conn.sendButton(id, `cc, `teks,`.trim(), '© sekha', 'menu', ',menu', m)
+    conn.sendButton(id, `teks, `teks,`.trim(), '© sekha', 'menu', ',menu', m)
     }
   m.reply('*Broadcast Selesai*')
 }
