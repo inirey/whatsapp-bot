@@ -1,3 +1,9 @@
+/*
+Thanks to :
+Galangzbin
+Benniismael : https://github.com/botstylee/botstylee
+/*
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 const { servers, yta, ytv } = require('../lib/y2mate')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
