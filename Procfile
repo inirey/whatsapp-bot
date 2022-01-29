@@ -1,1 +1,1 @@
-worker: node . --public
+web: npm start
