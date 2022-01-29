@@ -1,7 +1,7 @@
 let handler = async (m, { conn }) => {
   await m.reply(wait)
-  let res = `https://api.zacros.my.id/asupan/random`
-  await conn.sendFile(m.chat, res, '', `monggo cok`, m)
+  let res = `https://api.reysekha.xyz/api/asupan?apikey=APIKEY`
+  await conn.sendFile(m.chat, res, '', `asupan nya gan`, m)
 }
 
 handler.help = ['asupan']
