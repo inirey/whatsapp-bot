@@ -7,11 +7,11 @@ on:
   push:
     branches: 
       - main
-      - master
+      - termux
   pull_request:
     branches: 
       - main
-      - master
+      - termux
 
 jobs:
   build:
