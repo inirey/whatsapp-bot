@@ -8,7 +8,7 @@
 <a href="//github.com/inirey"><img src="https://img.shields.io/badge/Author-Rey-red.svg?style=for-the-badge&logo=github"/><a/>
 </p>
 <p align="center">
-<a href="https://www.codefactor.io/repository/github/inirey/whatsapp-bot/overview/master"><img title="Rating" src="https://www.codefactor.io/repository/github/inirey/whatsapp-bot/badge/master"></a>
+<a href="https://www.codefactor.io/repository/github/inirey/whatsapp-bot/overview/main"><img title="Rating" src="https://www.codefactor.io/repository/github/inirey/whatsapp-bot/badge/main"></a>
 </p>
 <p align="center">
 <a href="https://javascript.com"><img src="https://img.shields.io/badge/Made%20With-javascript-cyan.svg?style=for-the-badge&logo=javascript"/><a/>
