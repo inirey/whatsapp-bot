@@ -34,12 +34,12 @@ handler.all = async function (m, { isPrems }) {
     }
 
     if (/^.*(fb.watch|facebook.com)/i.test(m.text)) {
-        let res = await fetch(API('xteam', '/dl/fbv2', { url }, 'APIKEY'))
+        let res = await fetch(API('rey', 'api/downloader/facebook', { url }, 'apikey'))
         if (!res.ok) return m.reply(eror)
         let json = await res.json()
         await m.reply(wait)
         // m.reply(util.format(json))
-        await conn.sendFile(m.chat, json.result.hd.url, '', 'sukes ✓', m)
+        await conn.sendFile(m.chat, json.result.url, '', 'sukes ✓', m)
     }
 
     if (/^.*instagram.com\/(p|reel|tv)/i.test(m.text)) {
