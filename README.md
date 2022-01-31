@@ -47,12 +47,6 @@ node . --server
 
 ---------
 
-Install the dependencies:
-
-```bash
-> bash install.sh
-```
-
 ### Usage
 Run the Whatsapp bot
 
