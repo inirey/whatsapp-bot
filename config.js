@@ -5,9 +5,7 @@ global.owner = ['6281284760551', '6281284760551'] // Letakan nomor kamu disini
 
 global.APIs = { // API Prefix
   // nama: 'https://website'
-  bx: 'https://bx-hunter.herokuapp.com',
   rey: 'https://api.reysekha.xyz',
-  dhnjing: 'https://dhnjing.xyz',
   jawasoft: 'https://api.jawasoft.xyz',
   hardianto: 'https://hardianto.xyz',
   jonaz: 'https://jonaz-api-v2.herokuapp.com',
@@ -29,7 +27,6 @@ global.APIKeys = { // APIKey nya disini
   'htttps://api.jawasoft.xyz': 'APIKEY',
   'https://api.sekha.tech': 'APIKEY',
   'https://api.reysekha.xyz': 'APIKEY',
-  'https://bx-hunter.herokuapp.com': 'APIKEY',
   'https://hardianto.xyz': 'APIKEY',
   'https://api.neoxr.eu.org': 'APIKEY',
   'https://api.chipa.xyz': 'APIKEY',
