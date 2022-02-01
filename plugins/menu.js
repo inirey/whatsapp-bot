@@ -5,58 +5,58 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 let tags = {
-    'game': '🔖 _*G A M E*_ 🔖',
-    'xp': '🔖 _*E X P & L I M I T*_ 🔖',
-    'sticker': '🔖 _*S T I C K E R*_ 🔖',
-    'kerang': '🔖 _*K E R A N G*_  🔖',
-    'random': '🔖 _*R A N D O M  A N I M E*_ 🔖',
-    'quotes': '🔖 _*Q U O T E S*_ 🔖',
-    'admin': '🔖 _*A D M I N*_ 🔖',
-    'group': '🔖 _*G R O U P*_ 🔖',
-    'internet': '🔖 _*I N T E R N E T*_ 🔖',
-    'anonymous': '🔖 _*A N O N C H A T*_ 🔖',
-    'nulis': '🔖 _*M A K E R*_ 🔖',
-    'downloader': '🔖 _*D O W N L O A D E R*_ 🔖',
-    'tools': '🔖 _*T O O L S*_ 🔖',
-    'fun': '🔖 _*F U N*_ 🔖',
-    'database': '🔖 _*D A T A B A S E*_ 🔖',
-    'vote': '🔖 _*V O T I N G*_ 🔖',
-    'absen': '🔖 _*A B S E N*_ 🔖',
-    'quran': '🔖 _*I S L A M I*_ 🔖',
-    'audio': '🔖 _*S O U N D*_ 🔖',
-    'info': '🔖 _*I N F O R M A T I O N*_ 🔖',
+    'game': '❏ *G A M E* ❏',
+    'xp': '❏ *E X P & L I M I T* ❏',
+    'sticker': '❏ *S T I C K E R* ❏',
+    'kerang': '❏ *K E R A N G* ❏',
+    'random': '❏ *R A N D O M  A N I M E* ❏',
+    'quotes': '❏ *Q U O T E S* ❏',
+    'admin': '❏ *A D M I N* ❏',
+    'group': '❏ *G R O U P* ❏',
+    'internet': '❏ *I N T E R N E T* ❏',
+    'anonymous': '❏ *A N O N C H A T* ❏',
+    'nulis': '❏ *M A K E R* ❏',
+    'downloader': '❏ *D O W N L O A D E R* ❏',
+    'tools': '❏ *T O O L S* ❏',
+    'fun': '❏ *F U N* ❏',
+    'database': '❏ *D A T A B A S E* ❏',
+    'vote': '❏ *V O T I N G* ❏',
+    'absen': '❏ *A B S E N* ❏',
+    'quran': '❏ *I S L A M I* ❏',
+    'audio': '❏ *S O U N D* ❏',
+    'info': '❏ *I N F O R M A T I O N* ❏',
   }
 
 const defaultMenu = {
   before: `
 *HAI %name!* 👋 *Welcome have a nice day* ✨
 
-  🔖 _*U S E R S*_ 🔖
+  ❏  *U S E R S*  ❏
 
-🔖 _NAME: %name_
-🔖 _LIMIT: %limit_
-🔖 _ROLE: %role_
-🔖 _LEVEL: %level / %maxexp_
-🔖 _XP:  %exp / %totalexp_
+»  NAME: %name
+»  LIMIT: %limit
+»  ROLE: %role
+»  LEVEL: %level / %maxexp
+»  XP:  %exp / %totalexp
 
 
-   🔖 _*E R Z A  I N F O*_ 🔖
+   ❏  *E R Z A  I N F O*  ❏
 
-🔖 _DATE: %week %date_
-🔖 _ISLAMI: %dateIslamic_
-🔖 _TIME: %time_
-🔖 _RUNTIME: %uptime_
-🔖 _USERS: %rtotalreg_
-🔖 _WEB: https://erzaa.site_
-🔖 _Api: https://api.sekha.tech_
-🔖 _Owner: https://github.com/inirey_
+»  DATE: %week %date
+»  ISLAMI: %dateIslamic
+»  TIME: %time
+»  RUNTIME: %uptime
+»  USERS: %rtotalreg
+»  WEB: https://api.erzaa.site
+»  Api: https://api.sekha.tech
+»  Owner: https://github.com/inirey
 
 
 _-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 %readmore`.trimStart(),
-  header: '%category\n\n',
-  body: '🔖 _%cmd_',
+  header: ' %category\n\n',
+  body: ' » *%cmd*',
   footer: '\n',
   after: `
 *%npmname*
