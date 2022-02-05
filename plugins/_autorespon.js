@@ -12,9 +12,9 @@ handler.all = async function (m, { conn, isBlocked }) {
     if (m.isGroup) {
         if (m.mentionedJid.includes(this.user.jid)) {
             await this.send2Button(m.chat,
-                isBanned ? 'erza tidak aktif kak' : banned ? 'kamu dibanned' : 'erza aktif kak',
+                isBanned ? 'erza tidak aktif' : banned ? 'kamu dibanned' : 'erza sudah aktif',
                 '© sekha',
-                isBanned ? 'Unban' : banned ? 'Pemilik Bot' : 'Menu',
+                isBanned ? 'Unban' : banned ? 'owner' : 'Menu',
                 isBanned ? '.unban' : banned ? '.owner' : '.?',
                 m.isGroup ? 'Ban' : isBanned ? 'Unban' : 'Donasi',
                 m.isGroup ? '.ban' : isBanned ? '.unban' : '.donasi', m)
@@ -23,20 +23,17 @@ handler.all = async function (m, { conn, isBlocked }) {
 
     // ketika ada yang invite/kirim link grup di chat pribadi
     if ((m.mtype === 'groupInviteMessage' || m.text.startsWith('https://chat') || m.text.startsWith('Buka tautan ini')) && !m.isBaileys && !m.isGroup) {
-        this.sendButton(m.chat, `┌「 *Undang Bot ke Grup* 」
+        this.sendButton(m.chat, `
+┌「 *Undang Bot ke Grup* 」
 ├ 7 Hari / Rp 5,000
-├ 30 Hari / Rp 10,000
+├ 30 Hari / Rp 15,000
+├ 60 Hari / Rp 25,000
+├ 90 Hari / Rp 30,000
+├ 100 Hari / Rp 40,000
 └────
 
-https://github.com/inirey
-`.trim(), '© sekha', 'Pemilik Bot', ',owner', m)
-    }
-
-    // erzabot
-    let reg = /(erz?a|er|za)/i
-    let isErza = reg.exec(m.text)
-    if (isErza && !m.fromMe) {
-        m.reply(`ya erza di sini siap membantu\n_apa kak erza di sini\'erza di sini kak`)
+https://instagram.com/_sekhaa
+`.trim(), '© sekha', 'owner', ',owner', m)
     }
 
     // salam
@@ -67,7 +64,7 @@ https://github.com/inirey
         if (new Date() * 1 - set.status > 1000) {
             let _uptime = process.uptime() * 1000
             let uptime = conn.clockString(_uptime)
-            await this.setStatus(`Aktif selama ${uptime} | Mode: ${set.self ? 'Private' : set.group ? 'Hanya Grup' : 'Publik'} owner sekha`).catch(_ => _)
+            await this.setStatus(`Status Aktif selama ${uptime} | Mode: ${set.self ? 'Private' : set.group ? 'Hanya Grup' : 'Publik'} | Made with By ❤️ sekha`).catch(_ => _)
             set.status = new Date() * 1
         }
     }
