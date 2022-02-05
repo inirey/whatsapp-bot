@@ -25,6 +25,10 @@
 
 ## DEPLOY HEROKUAPP
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/inirey/whatsapp-bot/)
+* Jika sudah mempunyai code session nya tinggal buat file session.data.json dan tempelkan kode nya di dalam file tersebut 
+* If you already have the session code, just create a session.data.json file and paste the code in the file
+* dan untuk termux silahkan beralih ke branch termux
+* and for termux users, please switch to the termux branch if it still doesn't support please just run using herokuapp, thanks
 
 ## ADD BUILDPACK HEROKU
 * heroku/nodejs
