@@ -34,15 +34,21 @@
 ## WHATSAPP BOT GROUP
 <a href="https://chat.whatsapp.com/D7L8NP2Vnz7Eplx4OAvZdP"><img title="WHATSAPP GROUP" src="https://img.shields.io/badge/Whatsapp Group-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 
-## Install
-Clone this project
+## USERS WINDOWS/VPS/RDP
+
+* Instal Git [`click here`](https://git-scm.com/downloads)
+* Instal NodeJS [`click here`](https://nodejs.org/en/download)
+* Instal FFmpeg [`click here`](https://ffmpeg.org/download.html) (**Jangan Lupa Tambahkan FFmpeg ke variabel lingkungan PATH**)
+* Instal ImageMagick [`click here`](https://imagemagick.org/script/download.php)
+
+## USERS TERMUX
 
 ```bash
-git clone https://github.com/inirey/whatsapp-bot
+git clone https://github.com/inirey/whatsapp-bot --branch termux
 cd whatsapp-bot
 npm i
 npm update
-node . --server
+node .
 ```
 
 ---------
