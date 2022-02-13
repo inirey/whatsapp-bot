@@ -47,9 +47,9 @@
 ## USERS TERMUX
 
 ```bash
-apt install clang libpixman librsvg giflib libpng libjpeg-turbo pango libcairo xorgproto
 git clone https://github.com/inirey/whatsapp-bot --branch termux
 cd whatsapp-bot
+apt install clang libpixman librsvg giflib libpng libjpeg-turbo pango libcairo xorgproto
 npm i
 npm update
 node .
