@@ -21,15 +21,15 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey in here
   // 'https://website': 'apikey'
-  'https://api-xcoders.xyz': 'APIKEY',
-  'https://api.reysekha.xyz': 'APIKEY',
-  'https://hardianto.xyz': 'APIKEY',
-  'https://api.neoxr.eu.org': 'APIKEY',
-  'https://api.chipa.xyz': 'APIKEY',
-  'https://cakrayp.herokuapp.com': 'APIKEY',
-  'https://api.xteam.xyz': 'APIKEY',
-  'https://zahirr-web.herokuapp.com': 'APIKEY',
-  'https://api.zeks.me': 'APIKEY',
+  'https://api-xcoders.xyz': 'APIKEY', // REGISTER ON WEB
+  'https://api.reysekha.xyz': 'apirey', // UNLIMITED
+  'https://hardianto.xyz': 'hardianto', // UNLIMITED
+  'https://api.neoxr.eu.org': 'yourkey', // UNLIMITED
+  'https://api.chipa.xyz': 'APIKEY', // REGISTER ON WEB
+  'https://cakrayp.herokuapp.com': 'cakrayp24Q6', // UNLIMITED
+  'https://api.xteam.xyz': 'APIKEY', // REGISTER
+  'https://zahirr-web.herokuapp.com': 'zahirgans', // UNLIMITED
+  'https://api.zeks.me': 'apivinz', // LIMIT 600 day 
 }
 
 
