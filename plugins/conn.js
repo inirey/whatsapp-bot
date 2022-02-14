@@ -11,6 +11,7 @@ let tags = {
     'kerang': '❏ *K E R A N G* ❏',
     'random': '❏ *R A N D O M  A N I M E* ❏',
     'quotes': '❏ *Q U O T E S* ❏',
+    'nsfw': '❏ *N S F W* ❏',
     'admin': '❏ *A D M I N* ❏',
     'group': '❏ *G R O U P* ❏',
     'internet': '❏ *I N T E R N E T* ❏',
@@ -48,7 +49,7 @@ const defaultMenu = {
 »  RUNTIME: %uptime
 »  USERS: %rtotalreg
 »  WEB: https://api.erzaa.site
-»  Api: https://api.sekha.tech
+»  Api: https://api.reysekha.xyz
 »  Owner: https://github.com/inirey
 
 
