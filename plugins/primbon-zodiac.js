@@ -1,3 +1,4 @@
+//let skh = require ('skh-api')
 let handler = (m, { usedPrefix, command, text }) => {
     if (!text) throw `Pengunaan:\n${usedPrefix + command} <tahun> <bulan> <lahir>\n\nContoh:\n${usedPrefix + command} 2002 02 25`
 
