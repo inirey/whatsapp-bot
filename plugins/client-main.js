@@ -26,6 +26,7 @@ let tags = {
     'quran': '❏ *I S L A M I* ❏',
     'audio': '❏ *S O U N D* ❏',
     'info': '❏ *I N F O R M A T I O N* ❏',
+    'owner': '❏ *O W N E R* ❏',
   }
 
 const defaultMenu = {
