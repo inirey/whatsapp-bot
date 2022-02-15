@@ -9,8 +9,8 @@ let handler = async (m, { conn }) => {
   if (!res.ok) throw await res.text()
   let json = await res.json()
   if (!json.status) throw json
-  await conn.sendFile(m.chat, json.result.male, '', 'Man', m)
-  await conn.sendFile(m.chat, json.result.female, '', 'Woman', m)
+  await conn.sendFile(m.chat, json.male, '', 'Man', m)
+  await conn.sendFile(m.chat, json.female, '', 'Woman', m)
 }
 handler.help = ['ppcouple', 'ppcp']
 handler.tags = ['random']
