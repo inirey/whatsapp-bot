@@ -41,7 +41,7 @@ XP: TOTAL ${exp} (${exp - min} / ${xp}) [${math <= 0 ? `Siap untuk *${usedPrefix
 Level: ${level}
 Role: *${role}*
 Limit: ${limit}
-Premium:* ${prem ? 'Ya' : 'Tidak'}
+Premium: ${prem ? 'Ya' : 'Tidak'}
 Terdaftar: ${registered ? 'Ya (' + new Date(regTime).toLocaleString() + ')' : 'Tidak'}${lastclaim > 0 ? '\nTerakhir Klaim: ' + new Date(lastclaim).toLocaleString() : ''}
 `.trim()
     let mentionedJid = [who]
