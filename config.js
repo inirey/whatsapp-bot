@@ -2,6 +2,7 @@ let fs = require('fs')
 let chalk = require('chalk')
 
 global.owner = ['6281284760551', '6281284760551'] // Your Number
+global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna premium tidak memerlukan limit
 
 global.APIs = { // API Prefix
   // nama: 'https://website'
