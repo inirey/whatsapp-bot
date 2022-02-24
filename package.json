@@ -33,7 +33,7 @@
     "skh-api": "^1.0.0",
     "canvacord": "^5.2.3",
     "cfonts": "^2.9.3",
-    "chalk": "^4.1.1",
+    "chalk": "^5.0.0",
     "cheerio": "^1.0.0-rc.10",
     "emoji-api": "^1.0.2",
     "express": "^4.17.1",
