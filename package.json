@@ -49,7 +49,7 @@
     "jsdom": "^16.6.0",
     "knights-canvas": "^1.2.7",
     "lodash": "^4.17.21",
-    "lowdb": "^2.1.0",
+    "lowdb": "^3.0.0",
     "moment-timezone": "^0.5.33",
     "mongoose": "^6.0.11",
     "node-fetch": "^2.6.1",
