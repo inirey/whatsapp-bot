@@ -4,6 +4,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     else who = m.chat
     let user = db.data.users[who]
     if (!who) return m.reply(`Tag/Mention!\n\nContoh:\n${usedPrefix + command} @0 1\n\nAngka 1 menunjukan total hari`)
+    if (global.prems.includes(who.split`@`[0])) throw 'dia udah premium!'
+    global.prems.push(`${who.split`@`[0]}`)
     let txt = text.replace('@' + who.split`@`[0], '').trim()
     if (!txt) throw `Angkanya mana?\n\nContoh:\n${usedPrefix + command} @0 1`
     if (isNaN(txt)) return m.reply(`Hanya angka!\n\nContoh:\n${usedPrefix + command} @0 1`)
