@@ -46,7 +46,7 @@
     "human-readable": "^0.2.1",
     "img2braille": "^1.0.1",
     "jsbarcode": "^3.11.4",
-    "jsdom": "^16.6.0",
+    "jsdom": "^19.0.0",
     "knights-canvas": "^1.2.7",
     "lodash": "^4.17.21",
     "lowdb": "^2.1.0",
