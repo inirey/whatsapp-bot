@@ -28,7 +28,7 @@
   "dependencies": {
     "@adiwajshing/baileys": "github:inirey/Baileys",
     "awesome-phonenumber": "^2.54.0",
-    "axios": "^0.21.1",
+    "axios": "^0.26.0",
     "brainly-scraper-v2": "^2.0.3",
     "skh-api": "^1.0.0",
     "canvacord": "^5.2.3",
