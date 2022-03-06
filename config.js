@@ -1,12 +1,13 @@
 let fs = require('fs')
 let chalk = require('chalk')
 
+//global.mod = JSON.parse(fs.readFileSync('./src/moderator.json')) 
 global.owner = ['6281284760551', '6281284760551'] // Your Number
 global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna premium tidak memerlukan limit
 
 global.APIs = { // API Prefix
   // nama: 'https://website'
-  rey: 'https://api.reysekha.xyz',
+  rey: 'https://api.reysekha.xyz', // CHANGED TO https://reysekhaa.herokuapp.com
   hardianto: 'https://hardianto.xyz',
   jonaz: 'https://jonaz-api-v2.herokuapp.com',
   neoxr: 'https://api.neoxr.eu.org',
@@ -28,9 +29,9 @@ global.APIKeys = { // APIKey in here
   'https://api.neoxr.eu.org': 'yourkey', // UNLIMITED
   'https://api.chipa.xyz': 'APIKEY', // REGISTER ON WEB
   'https://cakrayp.herokuapp.com': 'cakrayp24Q6', // UNLIMITED
-  'https://api.xteam.xyz': 'APIKEY', // REGISTER
+  'https://api.xteam.xyz': 'APIKEY', // REGISTER ON WEB
   'https://zahirr-web.herokuapp.com': 'zahirgans', // UNLIMITED
-  'https://api.zeks.me': 'apivinz', // LIMIT 600 day 
+  'https://api.zeks.me': 'apivinz', // LIMIT 400 day 
 }
 
 
@@ -45,9 +46,8 @@ global.benar = '✓'
 global.salah = '×'
 global.dikit = 'hampir benar'
 global.footer = '© sekha'
-global.lw = 'https://api.reysekha.xyz/api/textpro/greenhoror?apikey=apirey&text='
-global.reyganz= 'https://api.reysekha.xyz/api/wallpaper/ukhty?apikey='
-//global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text='
+global.lw = 'https://reysekhaa.herokuapp.com/api/textpro/greenhoror?apikey=apirey&text='
+global.reyganz= 'https://reysekhaa.herokuapp.com/api/wallpaper/ukhty?apikey='
 
 global.multiplier = 9999
 
