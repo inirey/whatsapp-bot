@@ -33,6 +33,7 @@ global.APIs = { // API Prefix
   zahir: 'https://zahirr-web.herokuapp.com',
   zekais: 'http://zekais-api.herokuapp.com',
   zeks: 'https://api.zeks.me',
+  amel: 'https://melcanz.com',
 }
 global.APIKeys = { // APIKey in here
   // 'https://website': 'apikey'
@@ -45,6 +46,7 @@ global.APIKeys = { // APIKey in here
   'https://api.xteam.xyz': 'APIKEY', // REGISTER ON WEB
   'https://zahirr-web.herokuapp.com': 'zahirgans', // UNLIMITED
   'https://api.zeks.me': 'apivinz', // LIMIT 400 day 
+  'https://melcanz.com': 'YOURAPIKEY' // Register dulu
 }
 
 
