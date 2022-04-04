@@ -4,6 +4,7 @@ Thanks to
 • Nurutomo
 • Arrifb
 • Ibnusyawall
+• Cakrayp
 • MRHRTZ hanif
 • Bochilgaming
 • unx
@@ -20,6 +21,7 @@ global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna pre
 
 global.APIs = { // API Prefix
   // nama: 'https://website'
+  chika: 'https://chikaeluvie.eu.org',
   rey: 'https://api.reysekha.xyz', // CHANGED TO https://reysekhaa.herokuapp.com
   hardianto: 'https://hardianto.xyz',
   jonaz: 'https://jonaz-api-v2.herokuapp.com',
@@ -37,6 +39,7 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey in here
   // 'https://website': 'apikey'
+  'https://chikaeluvie.eu.org': 'APIKEYMU',
   'https://api-xcoders.xyz': 'APIKEY', // REGISTER ON WEB
   'https://api.reysekha.xyz': 'apirey', // CHANGED TO https://reysekhaa.herokuapp.com
   'https://hardianto.xyz': 'hardianto', // UNLIMITED
@@ -51,10 +54,10 @@ global.APIKeys = { // APIKey in here
 
 
 // Sticker WM
-global.packname = '© erza bot'
-global.author = 'ig @_sekhaa'
+global.packname = '@ cuss.aa'
+global.author = '@ _sekhaa'
 
-global.wm = '© reysekha'
+global.wm = 'chika aka sekha'
 global.wait = '⏳ tunggu permintaan kamu sedang di proses...'
 global.eror = '× Upss Erorr silahkan lapor owner'
 global.benar = '✓'
