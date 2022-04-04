@@ -42,17 +42,6 @@
 * Instal FFmpeg [`click here`](https://ffmpeg.org/download.html)
 * Instal ImageMagick [`click here`](https://imagemagick.org/script/download.php)
 
-## USERS TERMUX
-
-```bash
-git clone https://github.com/inirey/whatsapp-bot --branch termux
-cd whatsapp-bot
-apt install clang libpixman librsvg giflib libpng libjpeg-turbo pango libcairo xorgproto
-npm i
-npm update
-node .
-```
-
 ---------
 
 ### Thanks To 
