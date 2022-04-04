@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/inirey/whatsapp-bot",
   "dependencies": {
-    "@adiwajshing/baileys": "github:inirey/Baileys",
+    "@adiwajshing/baileys": "github:BochilGaming/Baileys#fix",
     "awesome-phonenumber": "^2.54.0",
     "axios": "^0.21.1",
     "mongoose": "github:Automattic/mongoose",
