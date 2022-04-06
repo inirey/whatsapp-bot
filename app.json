@@ -1,10 +1,16 @@
 {
-  "name": "erzabot",
+  "name": "sekha",
   "description": "WhatsApp Bot",
   "repository": "https://github.com/inirey/whatsapp-bot",
-  "logo": "https://api.sekha.tech/logo.png",
+  "logo": "https://github.com/inirey/PORTOFOLIO/image/profile.png",
   "keywords": [
     "bot",
+    "Baileys-bot',
+    "Botwea",
+    "free-api",
+    "whatsapp-automate",
+    "bot-wa",
+    "inirey-bot",
     "whatsapp",
     "whatsapp-bot"
   ]
