@@ -9,6 +9,8 @@ let handler = async (m) => {
 }
 handler.help = ['shaunthesheep']
 handler.tags = ['videomaker']
+handler.limit = true
+handler.register = true
 
 handler.command = /^shaunthesheep$/i
 
