@@ -1,3 +1,5 @@
+// copasssssssssss
+
 const axios = require('axios')
 const cheerio = require('cheerio')
 
@@ -22,6 +24,7 @@ handler.help = ['igstalk @username']
 handler.tags = ['downloader']
 handler.command = /^(igstalk)$/i
 handler.limit = true
+handler.register = true
 
 module.exports = handler
 
