@@ -22,7 +22,7 @@ global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna pre
 
 global.APIs = { // API Prefix
   // nama: 'https://website'
-  rey: 'https://sekha.tech', // ERORR? CHANGED TO https://reysekhaa.herokuapp.com
+  rey: 'https://sekha.me', // ERORR? CHANGED TO https://reysekhaa.herokuapp.com
   hardianto: 'https://hardianto.xyz',
   jonaz: 'https://jonaz-api-v2.herokuapp.com',
   neoxr: 'https://api.neoxr.my.id',
@@ -40,7 +40,7 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey in here
   // 'https://website': 'apikey'
   'https://api-xcoders.xyz': 'APIKEY', // REGISTER ON WEB
-  'https://sekha.tech': 'apirey', // ERORR? CHANGED TO https://reysekhaa.herokuapp.com
+  'https://sekha.me': 'apirey', // ERORR? CHANGED TO https://reysekhaa.herokuapp.com
   'https://hardianto.xyz': 'hardianto', // UNLIMITED
   'https://api.neoxr.my.id': 'yourkey', // UNLIMITED
   'https://api.chipa.xyz': 'APIKEY', // REGISTER ON WEB
