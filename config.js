@@ -1,73 +1,48 @@
-/*
-
-Thanks to
-
-• Nurutomo
-• Arrifb
-• Ibnusyawall
-• Cakrayp
-• MRHRTZ hanif
-• Bochilgaming
-• unx
-• and all contributor
-
-*/
-
 let fs = require('fs')
 let chalk = require('chalk')
 
-//global.mod = JSON.parse(fs.readFileSync('./src/moderator.json')) 
-global.owner = ['6281284760551', '6281284760551'] // Your Number
-global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna premium tidak memerlukan limit
+global.owner = ['6281284760551']
+global.mods = []
+global.prems = []
 
-global.APIs = { // API Prefix
-  // nama: 'https://website'
-  rey: 'https://sekha.me', // ERORR? CHANGED TO https://reysekhaa.herokuapp.com
-  hardianto: 'https://hardianto.xyz',
-  jonaz: 'https://jonaz-api-v2.herokuapp.com',
-  neoxr: 'https://api.neoxr.my.id',
-  nrtm: 'https://nurutomo.herokuapp.com',
-  pencarikode: 'https://api.chipa.xyz',
-  xteam: 'https://api.xteam.xyz',
-  fxc7: 'https://api-xcoders.xyz',
-  waifupics: 'https://api.waifu.pics',
-  cakra: 'https://cakrayp.herokuapp.com',
-  zahir: 'https://zahirr-web.herokuapp.com',
-  zekais: 'http://api.zekais.com',
-  zeks: 'https://api.zeks.me',
-  amel: 'https://melcanz.com',
+global.APIs = {
+  // name: 'https://website'
+  sekhaAPI: 'https://sekha.me',
+  sekhaAPIs: 'https://sekha.tech'
 }
-global.APIKeys = { // APIKey in here
+
+global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://api-xcoders.xyz': 'APIKEY', // REGISTER ON WEB
-  'https://sekha.me': 'apirey', // ERORR? CHANGED TO https://reysekhaa.herokuapp.com
-  'https://hardianto.xyz': 'hardianto', // UNLIMITED
-  'https://api.neoxr.my.id': 'yourkey', // UNLIMITED
-  'https://api.chipa.xyz': 'APIKEY', // REGISTER ON WEB
-  'https://cakrayp.herokuapp.com': 'cakrayp24Q6', // UNLIMITED
-  'https://api.xteam.xyz': 'APIKEY', // REGISTER ON WEB
-  'https://zahirr-web.herokuapp.com': 'zahirgans', // UNLIMITED
-  'https://api.zeks.me': 'apivinz', // LIMIT 400 day 
-  'http://api.zekais.com',: 'APIKEY', // REGISTER
-  'https://melcanz.com': 'YOURAPIKEY' // Register dulu
+  'https://sekha.me': 'apirey',
+  'https://sekha.tech': 'apirey'
 }
-
 
 // Sticker WM
-global.packname = '@ cuss.aa'
-global.author = '@ _sekhaa'
 
-global.wm = 'chika aka sekha'
-global.wait = '⏳ tunggu permintaan kamu sedang di proses...'
-global.eror = '× Upss Erorr silahkan lapor owner'
-global.benar = '✓'
-global.salah = '×'
-global.dikit = 'hampir benar'
-global.footer = '© sekha'
-global.lw = 'https://reysekhaa.herokuapp.com/api/textpro/greenhoror?apikey=apirey&text='
-global.reyganz= 'https://reysekhaa.herokuapp.com/api/wallpaper/ukhty?apikey='
+const spack = fs.readFileSync("lib/exif.json")
+const stickerpack = JSON.parse(spack)
+if (stickerpack.spackname == '') {
+  var sticker_name = 'Follow'
+  var sticker_author = '@_sekhaa'
+} else {
+  var sticker_name = stickerpack.spackname
+  var sticker_author = stickerpack.sauthor
+}
 
-global.multiplier = 9999
+const file_exif = "lib/exif.json"
+fs.watchFile(file_exif, () => {
+  fs.unwatchFile(file_exif)
+  console.log(chalk.redBright("Update 'exif.json'"))
+  delete require.cache[file_exif]
+  require('./lib/exif.json')
+})
+
+global.packname = sticker_name
+global.author = sticker_author
+
+global.wait = 'please wait'
+global.multiplier = 132
+global.cecan = 'https://sekha.me/api/wallpaper/ukhty?apikey='
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
