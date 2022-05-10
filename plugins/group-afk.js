@@ -1,13 +1,13 @@
-let handler = async (m, { conn, text }) => {
+let handler = async (m, { text }) => {
   let user = global.db.data.users[m.sender]
   user.afk = + new Date
   user.afkReason = text
   m.reply(`
-${user ? user.name : conn.getName(m.sender)} sekarang AFK${text ? ': ' + text : ''}
+${conn.getName(m.sender)} is now AFK${text ? ': ' + text : ''}
 `)
 }
 handler.help = ['afk [alasan]']
-handler.tags = ['main']
+handler.tags = ['group']
 handler.command = /^afk$/i
 
 module.exports = handler
