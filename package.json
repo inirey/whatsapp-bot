@@ -32,7 +32,7 @@
     "mongoose": "github:Automattic/mongoose",
     "brainly-scraper-v2": "^2.0.3",
     "skh-api": "^2.0.0",
-    "cfonts": "^2.9.3",
+    "cfonts": "^3.0.0",
     "chalk": "^4.1.1",
     "cheerio": "^1.0.0-rc.10",
     "deepai": "^1.0.17",
